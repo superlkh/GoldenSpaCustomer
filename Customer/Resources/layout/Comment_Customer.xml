@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <ImageView
+        android:id="@+id/imgclose_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_redclose_customer"
+        android:layout_margin="5dp"
+        android:background="@drawable/blackborder_customer"/>
+
+    <TextView
+        android:id="@+id/TxtTopic_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá dịch vụ"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"/>
+
+    <ImageView
+        android:id="@+id/ImgCustomer_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_redclose_customer"
+        android:background="@drawable/roundimage"
+        android:layout_below="@+id/TxtTopic_Comment_Customer"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/TxtCustomerName_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên khách hàng"
+        android:textSize="20dp"
+        android:textColor="#000"
+        android:layout_below="@+id/ImgCustomer_Comment_Customer"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/TxtServiceName_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tên dịch vụ"
+        android:textSize="30dp"
+        android:textColor="#000"
+        android:layout_below="@+id/TxtCustomerName_Comment_Customer"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/TxtWriteComment_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Viết bình luận"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_below="@+id/TxtServiceName_Comment_Customer"
+        android:layout_marginTop="80dp"
+        android:layout_marginLeft="10dp"/>
+
+    <LinearLayout
+        android:id="@+id/LinearComment_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/TxtWriteComment_Comment_Customer"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+        <TextView
+        android:id="@+id/TxtComment_CommentGood_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tốt"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:background="@drawable/blackborder_customer"/>
+
+        <TextView
+        android:id="@+id/TxtComment_CommentFriendly_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Thân thiện"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:background="@drawable/blackborder_customer"/>
+
+        <TextView
+        android:id="@+id/TxtComment_CommentCleanRoom_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phòng sạch"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:background="@drawable/blackborder_customer"/>
+
+        <TextView
+        android:id="@+id/TxtComment_CommentGoodSerivce_Comment_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dịch vụ chất lượng"
+        android:textSize="15dp"
+        android:textColor="#000"
+        android:layout_marginLeft="10dp"
+        android:padding="5dp"
+        android:background="@drawable/blackborder_customer"/>
+    </LinearLayout>
+
+    <EditText android:id="@+id/Edt_WriteComment_Comment_Customer"
+        android:layout_width="fill_parent" 
+        android:layout_height="100dp"
+        android:maxLines="4" 
+        android:singleLine="false"   
+        android:padding="10dp"
+        android:layout_marginTop="10dp"
+        android:hint="Viết đánh giá"
+        android:textSize="20dp"
+        android:background="@drawable/blackborder_customer"
+        android:layout_below="@+id/LinearComment_Comment_Customer">
+    </EditText> 
+
+    <Button
+        android:id="@+id/BtxSendComment_Comment_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đánh giá"
+        android:layout_below="@+id/Edt_WriteComment_Comment_Customer"
+        android:layout_marginTop="15dp"
+        android:background="#24C32B"/>
+
+</RelativeLayout>

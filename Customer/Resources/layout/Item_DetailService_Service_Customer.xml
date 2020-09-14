@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/blackborder_customer"
+    android:padding="2dp"
+    android:layout_margin="2dp">
+
+    <ImageView
+        android:id="@+id/imgService_ItemService_DetailService_Customer"
+        android:layout_width="100dp"
+        android:layout_height="80dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/xonghoi" />
+
+    <ImageView
+        android:id="@+id/imgIconService_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_service_customer"
+        android:paddingTop="3dp"
+        android:layout_toRightOf="@+id/imgService_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtServiceName_ItemService_DetailService_Customer"
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:text="Tên dịch vụ"
+        android:paddingLeft="5dp"
+        android:maxLines="2"
+        android:textColor="#000"
+        android:paddingTop="3dp"
+        android:layout_toRightOf="@+id/imgIconService_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtSoPhong_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Số phòng: "
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/imgIconService_ItemService_DetailService_Customer"
+        android:layout_below="@+id/txtServiceName_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtRoomNumber_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="102"
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/txtSoPhong_ItemService_DetailService_Customer"
+        android:layout_below="@+id/txtServiceName_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtVIP_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="VIP"
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:paddingTop="3dp"
+        android:layout_marginLeft="290dp"/>
+
+    <CheckBox
+        android:id="@+id/cbVIP_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/txtVIP_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtGiuong_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giường: "
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:paddingTop="8dp"
+        android:layout_marginLeft="290dp"
+        android:layout_below="@+id/txtVIP_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtNumberBed_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="023"
+        android:textColor="#000"
+        android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/txtGiuong_ItemService_DetailService_Customer"
+        android:layout_below="@+id/txtVIP_ItemService_DetailService_Customer"/>
+
+    <TextView
+        android:id="@+id/txtTime_ItemService_DetailService_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hẹn đến 18g30 20/2/2020"
+        android:paddingLeft="5dp"
+        android:textColor="#000"
+        android:paddingTop="8dp"
+        android:layout_toRightOf="@+id/imgIconService_ItemService_DetailService_Customer"
+        android:layout_below="@+id/txtSoPhong_ItemService_DetailService_Customer"/>
+</RelativeLayout>
+

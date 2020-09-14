@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+	<item
+        android:id="@+id/navigation_home_customer"
+        android:icon="@drawable/ic_home_customer"
+        android:title="HOME" />
+
+	<item
+        android:id="@+id/navigation_appointment_customer"
+        android:icon="@drawable/ic_appointment_customer"
+        android:title="APPOINTMENT" />
+
+	<item
+        android:id="@+id/navigation_shoppingcart_customer"
+        android:icon="@drawable/ic_shoppingcart_customer"
+        android:title="SHOPPINGCART" />
+
+	<item
+        android:id="@+id/navigation_account_customer"
+        android:icon="@drawable/ic_account_customer"
+        android:title="ACCOUNT" />
+
+</menu>

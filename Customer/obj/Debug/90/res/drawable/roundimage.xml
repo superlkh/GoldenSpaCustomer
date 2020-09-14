@@ -1,0 +1,2 @@
+<shape android:shape="rectangle" xmlns:android="http://schemas.android.com/apk/res/android"><solid android:color="#FFF" /><size android:height="100dp" android:width="100dp" /><corners android:radius="70dp" /><stroke android:width="2dp" android:color="#000" /><!-- width là độ dày, dashGap: khoảng cách giữa 2 đứt khúc,
+     dashWidth: độ dài đường viền--></shape>

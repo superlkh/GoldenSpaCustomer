@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/blackborder_customer"
+    android:padding="2dp"
+    android:layout_margin="3dp">
+
+    <ImageView
+        android:id="@+id/imgService_ItemResultSearch_ResultSearch_Customer"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/xonghoi" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="5dp"
+        android:orientation="vertical"
+        android:layout_toRightOf="@+id/imgService_ItemResultSearch_ResultSearch_Customer">
+
+        <TextView
+        android:id="@+id/txtNameService_ItemResultSearch_ResultSearch_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Xông hơi đồng giá 200k"
+        android:textSize="15dp"
+        android:maxLines="2"
+        android:textColor="#000"/>
+
+        <TextView
+        android:id="@+id/txtPriceService_ItemResultSearch_ResultSearch_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="200k"
+        android:textSize="15dp"
+        android:textColor="#000"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp">
+
+            <ImageView
+                android:id="@+id/imglocation_ItemDiscount_Home_Customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_location_customer"
+                android:background="#FFF"/>
+
+            <TextView
+                android:id="@+id/txtNumberOutletApply_ItemResultSearch_ResultSearch_Customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="4"
+                android:text="3 chi nhánh áp dụng"
+                android:paddingLeft="5dp"
+                android:textColor="#000"/>
+        </LinearLayout>
+    </LinearLayout>
+    
+   
+</RelativeLayout>

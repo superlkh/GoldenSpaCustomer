@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/txtTopic_UpdateInfo_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cập nhật thông tin"
+        android:textColor="#000"
+        android:textSize="30dp"
+        android:layout_marginTop="80dp"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bordertextview_customer"/>
+
+    <TextView
+        android:id="@+id/txtHeight_UpdateInfo_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chiều cao"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:layout_below="@+id/txtTopic_UpdateInfo_Customer"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutHeight_UpdateInfo_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtHeight_UpdateInfo_Customer"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edtHeight_UpdateInfo_Customer"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Nhập chiều cao"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="cm"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtWeight_UpdateInfo_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cân nặng"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:layout_below="@+id/LinearLayoutHeight_UpdateInfo_Customer"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="15dp"/>
+
+    <LinearLayout
+        android:id="@+id/LinearLayoutWeight_UpdateInfo_Customer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/txtWeight_UpdateInfo_Customer"
+        android:layout_marginLeft="15dp"
+        android:orientation="horizontal">
+        <EditText
+            android:id="@+id/edtWeight_UpdateInfo_Customer"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="Nhập cân nặng"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="kg"
+            android:textSize="20dp"
+            android:textColor="#000"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LinearLayoutWeight_UpdateInfo_Customer"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="40dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/BtxSkip_UpdateIno_Customer"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Bỏ qua"
+            android:background="@drawable/blackborder_customer"/>
+        <Button
+            android:id="@+id/BtxContinue_UpdateIno_Customer"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Tiếp tục"
+            android:layout_marginLeft="50dp"
+            android:background="@drawable/blackborder_customer"/>
+    </LinearLayout>
+
+</RelativeLayout>
