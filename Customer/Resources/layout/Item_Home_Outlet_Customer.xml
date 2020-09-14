@@ -1,71 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="140dp"
+    android:layout_height="170dp"
+    android:padding="2dp"
+    android:background="@drawable/blackborder_customer">
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_height="wrap_content"
-    android:layout_width="140dp">
+    <ImageView
+        android:id="@+id/imgOutlet_ItemOutlet_Home_Customer"
+        android:layout_width="140dp"
+        android:layout_height="68dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/xonghoi" />
 
-    <ScrollView
+
+    <TextView
+        android:id="@+id/txtOutletName_ItemOutlet_Home_Customer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="3dp">
+        android:text="Chi nhánh Nguyễn Bỉnh Khiêm"
+        android:maxLines="2"
+        android:padding="5dp"
+        android:textColor="#000"
+        android:layout_below="@+id/imgOutlet_ItemOutlet_Home_Customer"/>
 
-        <RelativeLayout
+
+
+    <LinearLayout
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/imgLocation_ItemOutlet_Home_Customer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:padding="2dp"
-            android:background="@drawable/blackborder_customer">
+            android:src="@drawable/ic_location_customer"/>
 
-            <ImageView
-                android:id="@+id/imgOutlet_ItemOutlet_Home_Customer"
-                android:layout_width="140dp"
-                android:layout_height="68dp"
-                android:scaleType="fitXY"
-                android:src="@drawable/xonghoi" />
+        <TextView
+            android:id="@+id/txtAdress_ItemOutlet_Home_Customer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="4"
+            android:text="127 Nguyễn Bỉnh Khiêm tphcm"
+            android:textSize="10dp"
+            android:paddingLeft="5dp"
+            android:textColor="#000"/>
 
-          
-            <TextView
-                android:id="@+id/txtOutletName_ItemOutlet_Home_Customer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Chi nhánh Nguyễn Bỉnh Khiêm"
-                android:maxLines="2"
-                android:padding="5dp"
-                android:textColor="#000"
-                android:layout_below="@+id/imgOutlet_ItemOutlet_Home_Customer"/>
-
-            
-
-            <LinearLayout
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/txtOutletName_ItemOutlet_Home_Customer"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp">
-
-                <ImageView
-                    android:id="@+id/imgLocation_ItemOutlet_Home_Customer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_location_customer"/>
-
-                <TextView
-                    android:id="@+id/txtAdress_ItemOutlet_Home_Customer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:maxLines="4"
-                    android:text="127 Nguyễn Bỉnh Khiêm tphcm"
-                    android:textSize="10dp"
-                    android:paddingLeft="5dp"
-                    android:textColor="#000"/>
-
-            </LinearLayout>
-
-        </RelativeLayout>
-
-    </ScrollView>
-
-
-
-
+    </LinearLayout>
 
 </RelativeLayout>
+

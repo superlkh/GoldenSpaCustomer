@@ -21,12 +21,7 @@ namespace Customer
 
         public List<ListOutlet> mOutlet_List;
 
-        //public Home_Outlet_Customer_Adapter(Customer_Home_Outlet_ViewModel_List outlet_List)
-        //{
-        //    //this.context = context;
-        //    mOutlet_List = outlet_List;
-        //}
-
+      
         public Home_Outlet_Customer_Adapter(List<ListOutlet> outlet_List)
         {
             mOutlet_List = outlet_List;
@@ -39,10 +34,10 @@ namespace Customer
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
-            //Customer_Home_Outlet_ViewModel_ViewHolder vh = holder as Customer_Home_Outlet_ViewModel_ViewHolder;
-            //Picasso.Get().Load(mOutlet_List[position].mImage).Into(vh.OutletImg);
-            //vh.OutletName.Text = mOutlet_List[position].mName;
-            //vh.OutletAdress.Text = mOutlet_List[position].mAdress;
+            Customer_Home_Outlet_ViewModel_ViewHolder vh = holder as Customer_Home_Outlet_ViewModel_ViewHolder;
+            Picasso.Get().Load(mOutlet_List[position].Image).Into(vh.OutletImg);
+            vh.OutletName.Text = mOutlet_List[position].name;
+            vh.OutletAdress.Text = mOutlet_List[position].address;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

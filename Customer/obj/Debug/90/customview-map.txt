@@ -167,7 +167,6 @@ ScrollView;obj\Debug\90\res\layout\account_customer.xml
 ScrollView;obj\Debug\90\res\layout\home_customer.xml
 ScrollView;obj\Debug\90\res\layout\item_home_combo_customer.xml
 ScrollView;obj\Debug\90\res\layout\item_home_discount_customer.xml
-ScrollView;obj\Debug\90\res\layout\item_home_outlet_customer.xml
 ScrollView;obj\Debug\90\res\layout\item_home_usedservice_customer.xml
 ScrollView;obj\Debug\90\res\layout\item_shoppingcardshoppingcart_service_customer.xml
 ScrollView;obj\Debug\90\res\layout\service_customer.xml
