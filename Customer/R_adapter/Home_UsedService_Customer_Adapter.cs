@@ -11,15 +11,16 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Square.Picasso;
+using Customer.Models;
 
 namespace Customer
 {
     public class Home_UsedService_Customer_Adapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
-        public Customer_Home_UsedService_List mUsedService_List;
+        public List<ListPromotion> mUsedService_List;
 
-        public Home_UsedService_Customer_Adapter(Customer_Home_UsedService_List UsedService_List)
+        public Home_UsedService_Customer_Adapter(List<ListPromotion> UsedService_List)
         {
             //this.context = context;
             mUsedService_List = UsedService_List;
@@ -27,16 +28,16 @@ namespace Customer
 
         public override int ItemCount
         {
-            get { return mUsedService_List.Customer_Home_NumUsedService_ViewModel; }
+            get { return mUsedService_List.Count; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             Customer_Home_UsedService_ViewModel_ViewHolder vh = holder as Customer_Home_UsedService_ViewModel_ViewHolder;
-            Picasso.Get().Load(mUsedService_List[position].mAnh).Into(vh.ServiceImg);
-            vh.ServiceName.Text = mUsedService_List[position].mTenDv;
-            vh.ServicePrice.Text = mUsedService_List[position].mGia.ToString();
-            vh.NumberOutletApply.Text = mUsedService_List[position].mNumberOutletApply.ToString();
+            Picasso.Get().Load(mUsedService_List[position].Image).Into(vh.ServiceImg);
+            vh.ServiceName.Text = mUsedService_List[position].NameService;
+            vh.ServicePrice.Text = mUsedService_List[position].price.ToString();
+            vh.NumberOutletApply.Text = "Có" + mUsedService_List[position].TotalOutlets.ToString() + "chi nhánh áp dụng";
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

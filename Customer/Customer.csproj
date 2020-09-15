@@ -74,7 +74,17 @@
     <Compile Include="Fragment\Home.cs" />
     <Compile Include="Fragment\ShoppingCardShoppingCart.cs" />
     <Compile Include="Fragment\ShoppingCardHistoryAppointment.cs" />
-    <Compile Include="Model\ListOutlet.cs" />
+    <Compile Include="Models\AdressOfService.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\Comment.cs" />
+    <Compile Include="Models\CustomerInfo.cs" />
+    <Compile Include="Models\DetailService.cs" />
+    <Compile Include="Models\identityCart.cs" />
+    <Compile Include="Models\ListAdvertisement.cs" />
+    <Compile Include="Models\ListOutlet.cs" />
+    <Compile Include="Models\ListPromotion.cs" />
+    <Compile Include="Models\ListService.cs" />
+    <Compile Include="Models\TotalFeedback.cs" />
     <Compile Include="R_activity\activity_Account_Customer.cs" />
     <Compile Include="R_activity\activity_Appointment_Customer.cs" />
     <Compile Include="R_activity\activity_BookAppointment_Customer.cs" />
@@ -92,6 +102,7 @@
     <Compile Include="R_activity\activity_ShoppingCardShoppingCart_Customer.cs" />
     <Compile Include="R_activity\Menu.cs" />
     <Compile Include="R_adapter\Appointment_RecentAppointment_Customer_Adapter.cs" />
+    <Compile Include="R_adapter\Home_Combo_Customer_Adapter.cs" />
     <Compile Include="R_adapter\Service_CustomerComment_Customer_Adapter.cs" />
     <Compile Include="R_viewmodel\Appointment_RecentAppointment_Customer_ViewModel.cs" />
     <Compile Include="R_adapter\BookAppointment_Therapist_Customer_Adapter.cs" />
@@ -103,6 +114,7 @@
     <Compile Include="R_adapter\Home_Advertisement_Customer_Adapter.cs" />
     <Compile Include="R_viewmodel\Home_Advertisement_Customer_ViewModel.cs" />
     <Compile Include="R_adapter\Home_Discount_Customer_Adapter.cs" />
+    <Compile Include="R_viewmodel\Home_Combo_Customer_ViewModel.cs" />
     <Compile Include="R_viewmodel\Home_Discount_Customer_ViewModel.cs" />
     <Compile Include="R_adapter\Home_Outlet_Customer_Adapter.cs" />
     <Compile Include="R_viewmodel\Home_Outlet_Customer_ViewModel.cs" />

@@ -43,8 +43,9 @@ namespace GoldenSpa.API
     using global::Android.Runtime;
     using global::Android.Views;
     using global::Android.Widget;
-    using global::Customer.Model;
+    using global::Customer.Models;
     using global::Refit;
+    using global::Customer;
 
     /// <inheritdoc />
     [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -70,6 +71,134 @@ namespace GoldenSpa.API
             var arguments = new object[] {  };
             var func = requestBuilder.BuildRestResultFuncForMethod("GetListChiNhanh", new Type[] {  });
             return (Task<List<ListOutlet>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListPromotion>> IMyAPI.GetListPromotion()
+        {
+            var arguments = new object[] {  };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListPromotion", new Type[] {  });
+            return (Task<List<ListPromotion>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListPromotion>> IMyAPI.GetListCombo()
+        {
+            var arguments = new object[] {  };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListCombo", new Type[] {  });
+            return (Task<List<ListPromotion>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListAdvertisement>> IMyAPI.GetListAdvertisement()
+        {
+            var arguments = new object[] {  };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListAdvertisement", new Type[] {  });
+            return (Task<List<ListAdvertisement>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListPromotion>> IMyAPI.GetListServiceUsed(string id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListServiceUsed", new Type[] { typeof(string) });
+            return (Task<List<ListPromotion>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListPromotion>> IMyAPI.GetListComboUsed(string id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListComboUsed", new Type[] { typeof(string) });
+            return (Task<List<ListPromotion>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<string> IMyAPI.GetIdCustomer(string id)
+        {
+            var arguments = new object[] { id };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetIdCustomer", new Type[] { typeof(string) });
+            return (Task<string>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListService>> IMyAPI.GetServiceFromOutlet(string outletId)
+        {
+            var arguments = new object[] { outletId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetServiceFromOutlet", new Type[] { typeof(string) });
+            return (Task<List<ListService>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListService>> IMyAPI.GetComboFromOutlet(string outletId)
+        {
+            var arguments = new object[] { outletId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetComboFromOutlet", new Type[] { typeof(string) });
+            return (Task<List<ListService>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<ListService>> IMyAPI.GetPromotionFromOutlet(string outletId)
+        {
+            var arguments = new object[] { outletId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetPromotionFromOutlet", new Type[] { typeof(string) });
+            return (Task<List<ListService>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<DetailService> IMyAPI.GetService(string serviceId)
+        {
+            var arguments = new object[] { serviceId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetService", new Type[] { typeof(string) });
+            return (Task<DetailService>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<TotalFeedback>> IMyAPI.GetStar(string serviceId)
+        {
+            var arguments = new object[] { serviceId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetStar", new Type[] { typeof(string) });
+            return (Task<List<TotalFeedback>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<AddressOfService>> IMyAPI.GetOutletFromService(string serviceId)
+        {
+            var arguments = new object[] { serviceId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetOutletFromService", new Type[] { typeof(string) });
+            return (Task<List<AddressOfService>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<Comment>> IMyAPI.GetComment(string serviceId)
+        {
+            var arguments = new object[] { serviceId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetComment", new Type[] { typeof(string) });
+            return (Task<List<Comment>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<Cart>> IMyAPI.GetCarts()
+        {
+            var arguments = new object[] {  };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetCarts", new Type[] {  });
+            return (Task<List<Cart>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<CustomerInfo> IMyAPI.GetCustomerInfo(string customerId)
+        {
+            var arguments = new object[] { customerId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetCustomerInfo", new Type[] { typeof(string) });
+            return (Task<CustomerInfo>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<string> IMyAPI.PostGioHang(Cart cart)
+        {
+            var arguments = new object[] { cart };
+            var func = requestBuilder.BuildRestResultFuncForMethod("PostGioHang", new Type[] { typeof(Cart) });
+            return (Task<string>)func(Client, arguments);
         }
     }
 }

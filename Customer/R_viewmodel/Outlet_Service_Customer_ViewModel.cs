@@ -13,46 +13,7 @@ using Android.Widget;
 
 namespace Customer
 {
-    public class Customer_Outlet_Service_ViewModel
-    {
-        public string mImageService { get; set; }
-        public string mNameService { get; set; }
-        public string mPriceService { get; set; }
-    }
-
-    public class Customer_Outlet_Service_ViewModel_List
-    {
-        static Customer_Outlet_Service_ViewModel[] DataSample_Customer_Outlet_Service_ViewModel_List =
-        {
-            new Customer_Outlet_Service_ViewModel(){mImageService="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameService="Xông hơi",mPriceService="200K"},
-            new Customer_Outlet_Service_ViewModel(){mImageService="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameService="Xông hơi",mPriceService="200K"},
-            new Customer_Outlet_Service_ViewModel(){mImageService="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameService="Xông hơi",mPriceService="200K"},
-        };
-
-        private Customer_Outlet_Service_ViewModel[] Customer_Outlet_Service_ViewModels;
-        Random random;
-
-        public Customer_Outlet_Service_ViewModel_List()
-        {
-            this.Customer_Outlet_Service_ViewModels = DataSample_Customer_Outlet_Service_ViewModel_List;
-            random = new Random();
-        }
-
-        public int Customer_Outlet_NumService_ViewModel
-        {
-            get
-            {
-                return Customer_Outlet_Service_ViewModels.Length;
-            }
-        }
-
-        public Customer_Outlet_Service_ViewModel this[int i]
-        {
-            get { return Customer_Outlet_Service_ViewModels[i]; }
-        }
-
-    }
-
+    
     public class Customer_Outlet_Service_ViewModel_ViewHolder : RecyclerView.ViewHolder
     {
         public ImageView ServiceImg { get; set; }
@@ -64,7 +25,7 @@ namespace Customer
         {
             ServiceImg = ItemView.FindViewById<ImageView>(Resource.Id.imgService_ItemService_Outlet_Customer);
             ServiceName = ItemView.FindViewById<TextView>(Resource.Id.txtNameService_ItemService_Outlet_Customer);
-            ServicePrice = ItemView.FindViewById<TextView>(Resource.Id.txtNameService_ItemService_Outlet_Customer);
+            ServicePrice = ItemView.FindViewById<TextView>(Resource.Id.txtPriceService_ItemService_Outlet_Customer);
             itemview.Click += (sender, e) => listener(base.Position);
         }
     }

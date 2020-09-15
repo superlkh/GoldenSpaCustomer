@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -11,32 +10,35 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Square.Picasso;
+using Customer.Models;
 
 namespace Customer
 {
     public class Home_Discount_Customer_Adapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
-        public Customer_Home_Service_List mService_Image;
+        public List<ListPromotion> listPromotion;
 
-        public Home_Discount_Customer_Adapter(Customer_Home_Service_List Service_Image)
+        public Home_Discount_Customer_Adapter(List<ListPromotion> listDiscount)
         {
-            //this.context = context;
-            mService_Image = Service_Image;
+            listPromotion = listDiscount;
         }
 
         public override int ItemCount
         {
-            get { return mService_Image.Customer_Home_NumService_ViewModel; }
+            get { return listPromotion.Count; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             Customer_Home_Service_ViewModel_ViewHolder vh = holder as Customer_Home_Service_ViewModel_ViewHolder;
-            Picasso.Get().Load(mService_Image[position].mAnh).Into(vh.ServiceImg);
-            vh.ServiceName.Text = mService_Image[position].mTenDv;
-            vh.ServicePrice.Text = mService_Image[position].mGia.ToString();
-            vh.NumberOutletApply.Text = "Có " + mService_Image[position].mNumberOutletApply.ToString() + " chi nhánh áp dụng";
+            Picasso.Get().Load(listPromotion[position].Image).Into(vh.ServiceImg);
+            vh.ServiceName.Text = listPromotion[position].NameService;
+            if (listPromotion[position].price == null)
+                vh.ServicePrice.Text = "Giảm giá " + listPromotion[position].Discount.ToString()+"%";
+            else
+                vh.ServicePrice.Text = listPromotion[position].price.ToString();
+            vh.NumberOutletApply.Text = "Có " + listPromotion[position].TotalOutlets.ToString() + " chi nhánh áp dụng";
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

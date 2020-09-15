@@ -13,43 +13,6 @@ using Android.Widget;
 
 namespace Customer
 {
-    public class Customer_Home_Advertisement_ViewModel
-    {
-        public string mAnh { get; set; }
-    }
-
-    public class Customer_Home_Advertisement_ViewModel_List
-    {
-        static Customer_Home_Advertisement_ViewModel[] DataSample_Customer_Home_Advertisement_ViewModel =
-        {
-            new Customer_Home_Advertisement_ViewModel(){mAnh="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg"},
-            new Customer_Home_Advertisement_ViewModel(){mAnh="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg"}
-        };
-
-        private Customer_Home_Advertisement_ViewModel[] Customer_Home_Advertisement_ViewModels;
-        Random random;
-
-        public Customer_Home_Advertisement_ViewModel_List()
-        {
-            this.Customer_Home_Advertisement_ViewModels = DataSample_Customer_Home_Advertisement_ViewModel;
-            random = new Random();
-        }
-
-        public int Customer_Home_NumAdvertisement_ViewModel
-        {
-            get
-            {
-                return Customer_Home_Advertisement_ViewModels.Length;
-            }
-        }
-
-        public Customer_Home_Advertisement_ViewModel this[int i]
-        {
-            get { return Customer_Home_Advertisement_ViewModels[i]; }
-        }
-
-    }
-
     public class Customer_Home_Advertisement_ViewModel_ViewHolder : RecyclerView.ViewHolder
     {
         public ImageView AdvertisementImg { get; set; }

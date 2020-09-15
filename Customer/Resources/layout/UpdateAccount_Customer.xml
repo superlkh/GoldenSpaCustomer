@@ -53,7 +53,7 @@
                 android:id="@+id/TxtFName_UpdateAccount_Customer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Họ"
+                android:text="Họ tên"
                 android:textSize="20dp"
                 android:textColor="#000"
                 android:layout_gravity="center_vertical"
@@ -65,30 +65,11 @@
                 android:id="@+id/EdtFName_UpdateAccount_Customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Nhập họ"
+                android:hint="Nhập họ tên"
                 android:layout_marginLeft="10dp"
                 android:layout_below="@+id/TxtFName_UpdateAccount_Customer"/>
 
-            <TextView
-                android:id="@+id/TxtLName_UpdateAccount_Customer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Tên"
-                android:textSize="20dp"
-                android:textColor="#000"
-                android:layout_gravity="center_vertical"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_below="@+id/EdtFName_UpdateAccount_Customer"/>
-
-            <EditText
-                android:id="@+id/EdtLName_UpdateAccount_Customer"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Nhập tên"
-                android:layout_marginLeft="10dp"
-                android:layout_below="@+id/TxtLName_UpdateAccount_Customer"/>
-
+            
             <TextView
                 android:id="@+id/TxtCity_UpdateAccount_Customer"
                 android:layout_width="wrap_content"
@@ -99,7 +80,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/EdtLName_UpdateAccount_Customer"/>
+                android:layout_below="@+id/EdtFName_UpdateAccount_Customer"/>
 
             <EditText
                 android:id="@+id/EdtCity_UpdateAccount_Customer"
@@ -152,7 +133,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:weightSum="3">
+                    android:weightSum="2">
                     <RadioButton
                         android:id="@+id/RadioBtxSex_male_UpdateAccount_Customer"
                         android:layout_width="wrap_content"
@@ -165,12 +146,6 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Nữ"/>
-                    <RadioButton
-                        android:id="@+id/RadioBtxSex_other_UpdateAccount_Customer"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:text="Khác"/>
                 </RadioGroup>
             </LinearLayout>
 
@@ -225,7 +200,7 @@
                     android:background="@drawable/blackborder_customer"
                     android:padding="5dp"
                     android:layout_below="@+id/Edt_UpdateAccount_PhoneNumber"/>
-                <ImageView
+                <ImageButton
                     android:id="@+id/imgBirthday_UpdateAccount_Customer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

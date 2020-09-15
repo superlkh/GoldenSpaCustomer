@@ -55,10 +55,10 @@
                 android:layout_below="@+id/LinearLayoutTopic_Service_Customer"/>
 
             <TextView
-                android:id="@+id/txtServiceName_Service_Customer"
+                android:id="@+id/txtServicePrice_Service_Customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Tên dịch vụ"
+                android:text="Giá"
                 android:textColor="#000"
                 android:textSize="20dp"
                 android:gravity="center_horizontal"
@@ -72,7 +72,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:layout_marginTop="50dp"
-                android:layout_below="@+id/txtServiceName_Service_Customer">
+                android:layout_below="@+id/txtServicePrice_Service_Customer">
 
             </Spinner>
 
@@ -149,12 +149,22 @@
                     android:background="@drawable/blackborder_customer"/>
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/txtNhanxet_Service_Customer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="| Nhận xét của khách hàng"
+                android:textColor="#000"
+                android:textSize="20dp"
+                android:layout_marginLeft="10dp"
+                android:layout_below="@+id/linearLayoutComment_Service_Customer"/>
+
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recyclerViewCustomerComment_Service_Customer"
                 android:layout_width="wrap_content"
                 android:layout_height="200dp"
                 android:scrollbars="vertical"
-                android:layout_below="@+id/linearLayoutComment_Service_Customer"
+                android:layout_below="@+id/txtNhanxet_Service_Customer"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="10dp"/>
 
@@ -190,6 +200,7 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true">
         <ImageView
+            android:id="@+id/imgcart_Service_Customer"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:scaleType="fitXY"

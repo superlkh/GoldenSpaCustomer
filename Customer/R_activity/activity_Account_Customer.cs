@@ -12,7 +12,7 @@ using Android.Widget;
 
 namespace Customer
 {
-    //[Activity(Label = "RecycleView", MainLauncher = true, Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
+    [Activity(Label = "RecycleView", Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
     class activity_Account_Customer : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

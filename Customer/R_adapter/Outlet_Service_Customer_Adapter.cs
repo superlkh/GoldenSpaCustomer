@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Customer.Models;
 using Square.Picasso;
 
 namespace Customer
@@ -17,9 +18,9 @@ namespace Customer
     public class Outlet_Service_Customer_Adapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
-        public Customer_Outlet_Service_ViewModel_List mService_List;
+        public List<ListService> mService_List;
 
-        public Outlet_Service_Customer_Adapter(Customer_Outlet_Service_ViewModel_List Service_List)
+        public Outlet_Service_Customer_Adapter(List<ListService> Service_List)
         {
             //this.context = context;
             mService_List = Service_List;
@@ -27,15 +28,18 @@ namespace Customer
 
         public override int ItemCount
         {
-            get { return mService_List.Customer_Outlet_NumService_ViewModel; }
+            get { return mService_List.Count; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             Customer_Outlet_Service_ViewModel_ViewHolder vh = holder as Customer_Outlet_Service_ViewModel_ViewHolder;
-            Picasso.Get().Load(mService_List[position].mImageService).Into(vh.ServiceImg);
-            vh.ServiceName.Text = mService_List[position].mNameService;
-            vh.ServicePrice.Text = mService_List[position].mPriceService;
+            Picasso.Get().Load(mService_List[position].Image).Into(vh.ServiceImg);
+            vh.ServiceName.Text = mService_List[position].NameService;
+            if (mService_List[position].NamePromotion == null)
+                vh.ServicePrice.Text = mService_List[position].price.ToString();
+            else
+                vh.ServicePrice.Text = mService_List[position].Discount.ToString(); ;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

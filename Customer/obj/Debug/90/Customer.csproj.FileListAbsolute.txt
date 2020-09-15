@@ -262,7 +262,6 @@ D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_DetailAppointmentCustomer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_DetailService_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_Home_Customer.java
-D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_Outlet_Customer_activity_UpdateInfo_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_ResultSearch_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_Service_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_ShoppingCardHistoryAppointment_Customer.java
@@ -460,4 +459,7 @@ D:\VisualStudio\Customer\Customer\obj\Debug\90\android\assets\System.Diagnostics
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\assets\System.Runtime.InteropServices.RuntimeInformation.dll
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\assets\System.ComponentModel.DataAnnotations.dll
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\assets\System.ComponentModel.DataAnnotations.pdb
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\Home_Combo_Customer_Adapter.java
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc643b917a3a20a5884b\Customer_Home_Combo_ViewModel_ViewHolder.java
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_Outlet_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\Customer.csprojAssemblyReference.cache

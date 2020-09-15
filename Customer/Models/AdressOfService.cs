@@ -15,15 +15,11 @@ using Android.Widget;
 
 
 
-namespace Customer.Model
+namespace Customer.Models
 {
-    public partial class ListOutlet
+    public partial class AddressOfService
     {
-        [Required]
-        [MinLength(2)]
-        public string? MaCN { get; set; }
-        public string? Image { get; set; }
-        public string? name { get; set; }
-        public string? address { get; set; }
+        public string MaChiNhanh { get; set; }
+        public string DiaChi { get; set; }
     }
 }

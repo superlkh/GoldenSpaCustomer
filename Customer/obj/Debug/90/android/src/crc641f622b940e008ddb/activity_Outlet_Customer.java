@@ -1,8 +1,8 @@
 package crc641f622b940e008ddb;
 
 
-public class activity_Outlet_Customer_activity_UpdateInfo_Customer
-	extends android.app.Activity
+public class activity_Outlet_Customer
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {
@@ -12,15 +12,15 @@ public class activity_Outlet_Customer_activity_UpdateInfo_Customer
 		__md_methods = 
 			"n_onCreate:(Landroid/os/Bundle;)V:GetOnCreate_Landroid_os_Bundle_Handler\n" +
 			"";
-		mono.android.Runtime.register ("Customer.activity_Outlet_Customer+activity_UpdateInfo_Customer, Customer", activity_Outlet_Customer_activity_UpdateInfo_Customer.class, __md_methods);
+		mono.android.Runtime.register ("Customer.activity_Outlet_Customer, Customer", activity_Outlet_Customer.class, __md_methods);
 	}
 
 
-	public activity_Outlet_Customer_activity_UpdateInfo_Customer ()
+	public activity_Outlet_Customer ()
 	{
 		super ();
-		if (getClass () == activity_Outlet_Customer_activity_UpdateInfo_Customer.class)
-			mono.android.TypeManager.Activate ("Customer.activity_Outlet_Customer+activity_UpdateInfo_Customer, Customer", "", this, new java.lang.Object[] {  });
+		if (getClass () == activity_Outlet_Customer.class)
+			mono.android.TypeManager.Activate ("Customer.activity_Outlet_Customer, Customer", "", this, new java.lang.Object[] {  });
 	}
 
 

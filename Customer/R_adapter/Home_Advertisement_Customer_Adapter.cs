@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -11,29 +10,29 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Square.Picasso;
+using Customer.Models;
 
 namespace Customer
 {
     public class Home_Advertisement_Customer_Adapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
-        public Customer_Home_Advertisement_ViewModel_List mdAdvertisement_List;
+        public List<ListAdvertisement> mdAdvertisement_List;
 
-        public Home_Advertisement_Customer_Adapter(Customer_Home_Advertisement_ViewModel_List advertisement_List)
+        public Home_Advertisement_Customer_Adapter(List<ListAdvertisement> advertisement_List)
         {
-            //this.context = context;
             mdAdvertisement_List = advertisement_List;
         }
 
         public override int ItemCount
         {
-            get { return mdAdvertisement_List.Customer_Home_NumAdvertisement_ViewModel; }
+            get { return mdAdvertisement_List.Count(); }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             Customer_Home_Advertisement_ViewModel_ViewHolder vh = holder as Customer_Home_Advertisement_ViewModel_ViewHolder;
-            Picasso.Get().Load(mdAdvertisement_List[position].mAnh).Into(vh.AdvertisementImg);
+            Picasso.Get().Load(mdAdvertisement_List[position].Image).Into(vh.AdvertisementImg);
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

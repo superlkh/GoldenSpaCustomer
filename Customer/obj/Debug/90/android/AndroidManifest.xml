@@ -5,8 +5,11 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
   <application android:allowBackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundIcon="@mipmap/ic_launcher_round" android:supportsRtl="true" android:theme="@style/AppTheme" android:name="android.app.Application" android:debuggable="true">
+    <activity android:label="RecycleView" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:name="crc641f622b940e008ddb.activity_Account_Customer" />
     <activity android:label="GoldenSpa" android:name="crc641f622b940e008ddb.activity_ChangePassword_Customer" />
+    <activity android:label="GoldenSpa" android:theme="@style/Theme.AppCompat.Light.DarkActionBar" android:name="crc641f622b940e008ddb.activity_Outlet_Customer" />
     <activity android:label="activity_ResultSearch_Customer" android:name="crc641f622b940e008ddb.activity_ResultSearch_Customer" />
+    <activity android:label="Service" android:name="crc641f622b940e008ddb.activity_Service_Customer" />
     <activity android:label="GoldenSpa" android:name="crc641f622b940e008ddb.activity_ShoppingCardHistoryAppointment_Customer" />
     <activity android:label="GoldenSpa" android:name="crc641f622b940e008ddb.activity_UpdateAccount_Customer" />
     <activity android:label="GoldenSpa" android:name="crc641f622b940e008ddb.activity_UpdateInfo_Customer" />

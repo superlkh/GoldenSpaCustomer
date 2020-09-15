@@ -17,10 +17,20 @@
         android:id="@+id/txtNameService_ItemRelativeDiscount_Service_Customer"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Xông hơi122222222222222222222222222222222222222"
-        android:maxLines="2"
+        android:text="tên dịch vụ"
         android:textColor="#000"
         android:textSize="20dp"
+        android:layout_toRightOf="@+id/imgService_ItemRelativeDiscount_Service_Customer"
+        android:padding="5dp"/>
+
+    <TextView
+        android:id="@+id/txtServicePrice_ItemRelativeDiscount_Service_Customer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Giá"
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:layout_below="@+id/txtNameService_ItemRelativeDiscount_Service_Customer"
         android:layout_toRightOf="@+id/imgService_ItemRelativeDiscount_Service_Customer"
         android:padding="5dp"/>
 
@@ -33,7 +43,7 @@
         android:textColor="#000"
         android:textSize="15dp"
         android:layout_toRightOf="@+id/imgService_ItemRelativeDiscount_Service_Customer"
-        android:layout_below="@+id/txtNameService_ItemRelativeDiscount_Service_Customer"
-        android:padding="5dp"/>
+        android:padding="5dp"
+        android:layout_alignParentBottom="true"/>
 
 </RelativeLayout>

@@ -2,12 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -15,14 +9,21 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-
+using GoldenSpa.API;
+using Refit;
+using Square.Picasso;
 
 namespace Customer.Fragment
 {
     public class Account : Android.Support.V4.App.Fragment
     {
+        IMyAPI myAPI;
+
+        ImageView avar;
+        TextView customerName;
         LinearLayout changePassword;
         LinearLayout updateAccount;
+
         public override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -32,10 +33,11 @@ namespace Customer.Fragment
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
-            // Use this to return your custom view for this Fragment
-            // return inflater.Inflate(Resource.Layout.YourFragment, container, false);
-
             View dv = inflater.Inflate(Resource.Layout.Account_Customer, container, false);
+
+            avar = dv.FindViewById<ImageView>(Resource.Id.imgCustomer_Account_Customer);
+            customerName = dv.FindViewById<TextView>(Resource.Id.txtCustomerName_Account_Customer);
+            getInfoCustomer();
 
             changePassword = dv.FindViewById<LinearLayout>(Resource.Id.LinearLayoutChangePass_Account_Customer);
             changePassword.Click += ChangePass_CLick;
@@ -43,6 +45,17 @@ namespace Customer.Fragment
             updateAccount.Click += UpdateAccount_Click;
 
             return dv;
+        }
+
+        private async void getInfoCustomer()
+        {
+            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
+            var idCustomer = await myAPI.GetIdCustomer("0123456789");
+            string cus = idCustomer.Substring(2, idCustomer.Length - 4);
+            var customerInfo = await myAPI.GetCustomerInfo(cus);
+
+            Picasso.Get().Load(customerInfo.AnhKh).Into(avar);
+            customerName.Text = customerInfo.TenKh;
         }
 
         private void ChangePass_CLick(object sender, EventArgs e)

@@ -10,7 +10,6 @@ android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\appointment_custo
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\bookappointment_customer.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\detailservice_customer.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\home_customer.xml
-android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\item_shoppingcardshoppingcart_service_customer.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\outlet_customer.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\resultsearch_customer.xml
 android.support.v7.widget.RecyclerView;obj\Debug\90\res\layout\service_customer.xml
@@ -52,6 +51,7 @@ FrameLayout;obj\Debug\90\res\layout\menublank.xml
 FrameLayout;obj\Debug\90\res\layout\shoppingcardhistoryappointment_customer.xml
 FrameLayout;obj\Debug\90\res\layout\shoppingcardshoppingcart_customer.xml
 gradient;obj\Debug\90\res\drawable\colorgolden.xml
+ImageButton;obj\Debug\90\res\layout\updateaccount_customer.xml
 ImageView;obj\Debug\90\res\layout\account_customer.xml
 ImageView;obj\Debug\90\res\layout\bookappointment_customer.xml
 ImageView;obj\Debug\90\res\layout\changepassword_customer.xml
@@ -165,9 +165,6 @@ resources;obj\Debug\90\res\values\strings.xml
 resources;obj\Debug\90\res\values\styles.xml
 ScrollView;obj\Debug\90\res\layout\account_customer.xml
 ScrollView;obj\Debug\90\res\layout\home_customer.xml
-ScrollView;obj\Debug\90\res\layout\item_home_combo_customer.xml
-ScrollView;obj\Debug\90\res\layout\item_home_discount_customer.xml
-ScrollView;obj\Debug\90\res\layout\item_home_usedservice_customer.xml
 ScrollView;obj\Debug\90\res\layout\item_shoppingcardshoppingcart_service_customer.xml
 ScrollView;obj\Debug\90\res\layout\service_customer.xml
 ScrollView;obj\Debug\90\res\layout\updateaccount_customer.xml

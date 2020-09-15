@@ -13,55 +13,7 @@ using Android.Widget;
 
 namespace Customer
 {
-    public class Customer_Service_CustomerComment_ViewModel
-    {
-        public string mImageCustomer { get; set; }
-        public string mNameCustomer { get; set; }
-        public int mValueStar { get; set; }
-        public string mComment { get; set; }
-        public string mDateTime { get; set; }
-    }
-
-    public class Customer_Service_CustomerComment_ViewModel_List
-    {
-        static Customer_Service_CustomerComment_ViewModel[] DataSample_Customer_Service_CustomerComment_ViewModel_List =
-        {
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-            new Customer_Service_CustomerComment_ViewModel(){mImageCustomer="https://redi.vn/wp-content/uploads/2019/05/dich-vu-thiet-ke-hinh-anh-quang-cao-slider.jpg",mNameCustomer="Ly Thanh",mValueStar=3,mComment="Good",mDateTime="22:30 21/08/2020"},
-        };
-
-        private Customer_Service_CustomerComment_ViewModel[] Customer_Service_CustomerComment_ViewModels;
-        Random random;
-
-        public Customer_Service_CustomerComment_ViewModel_List()
-        {
-            this.Customer_Service_CustomerComment_ViewModels = DataSample_Customer_Service_CustomerComment_ViewModel_List;
-            random = new Random();
-        }
-
-        public int Customer_Service_NumCustomerComment_ViewModel
-        {
-            get
-            {
-                return Customer_Service_CustomerComment_ViewModels.Length;
-            }
-        }
-
-        public Customer_Service_CustomerComment_ViewModel this[int i]
-        {
-            get { return Customer_Service_CustomerComment_ViewModels[i]; }
-        }
-
-    }
-
+    
     public class Customer_Service_CustomerComment_ViewModel_ViewHolder : RecyclerView.ViewHolder
     {
         public ImageView Img { get; set; }
