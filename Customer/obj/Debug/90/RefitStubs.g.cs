@@ -200,6 +200,14 @@ namespace GoldenSpa.API
             var func = requestBuilder.BuildRestResultFuncForMethod("PostGioHang", new Type[] { typeof(Cart) });
             return (Task<string>)func(Client, arguments);
         }
+
+        /// <inheritdoc />
+        Task<string> IMyAPI.UpdateCustomerInfo(CustomerInfo cus)
+        {
+            var arguments = new object[] { cus };
+            var func = requestBuilder.BuildRestResultFuncForMethod("UpdateCustomerInfo", new Type[] { typeof(CustomerInfo) });
+            return (Task<string>)func(Client, arguments);
+        }
     }
 }
 

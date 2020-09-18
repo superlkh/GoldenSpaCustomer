@@ -10,12 +10,16 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using GoldenSpa.API;
+using Refit;
 
 namespace Customer
 {
     [Activity(Label = "GoldenSpa")]
     class activity_ChangePassword_Customer : AppCompatActivity
     {
+        IMyAPI myAPI;
+
         ImageView back;
         Button sendConfirm;
         protected override void OnCreate(Bundle savedInstanceState)
@@ -44,6 +48,8 @@ namespace Customer
 
         private void SendConfirm_Click(object sender, EventArgs e)
         {
+            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
+
             Finish();
             SetContentView(Resource.Layout.Account_Customer);
             var navBottom = FindViewById<Android.Support.Design.Widget.BottomNavigationView>(Resource.Id.bottom_navigation);

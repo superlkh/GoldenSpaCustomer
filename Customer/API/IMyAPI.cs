@@ -79,8 +79,14 @@ namespace GoldenSpa.API
         [Get("/api/customer/{customerId}")]
         Task<CustomerInfo> GetCustomerInfo(string customerId);
 
+        //thêm vào giỏ hàng
         [Post("/api/carts")]
         Task<string> PostGioHang(Cart cart);
+
+        //Sửa thông tin khách hàng
+        [Put("/api/customer/{cus}")]
+        Task<string> UpdateCustomerInfo(CustomerInfo cus);
+
 
     }
 }

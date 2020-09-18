@@ -99,33 +99,7 @@ namespace Customer
 
         }
 
-        private async void Cart_Click1(object sender, EventArgs e)
-        {
-            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
-            var idCustomer = await myAPI.GetIdCustomer("0123456789");
-            string cus = idCustomer.Substring(4, idCustomer.Length - 6);
-
-            var List_Cart = await myAPI.GetCarts();
-            int max = int.Parse(List_Cart[0].MaGioHang);
-            for (int i=1;i<List_Cart.Count;i++)
-            {
-                if(max<int.Parse(List_Cart[i].MaGioHang))
-                {
-                    max = int.Parse(List_Cart[i].MaGioHang);
-                }
-                
-            }
-            max++;
-            Cart cartt = new Cart();
-            cartt.MaGioHang = max.ToString();
-            cartt.MaKh = idCustomer.Substring(2, idCustomer.Length - 4);
-            if (Intent.GetStringExtra("ServiceName") == null)
-                cartt.MaCombo = Intent.GetStringExtra("ServiceId");
-            else
-                cartt.MaDv = Intent.GetStringExtra("ServiceId");
-            var results = await myAPI.PostGioHang(cartt);
-            Toast.MakeText(this, results, ToastLength.Short).Show();
-        }
+        
 
         private void Back_Click(object sender, EventArgs e)
         {
@@ -325,6 +299,34 @@ namespace Customer
             };
         }
 
-        
+        private async void Cart_Click1(object sender, EventArgs e)
+        {
+            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
+            var idCustomer = await myAPI.GetIdCustomer("0123456789");
+            string cus = idCustomer.Substring(4, idCustomer.Length - 6);
+
+            var List_Cart = await myAPI.GetCarts();
+            int max = int.Parse(List_Cart[0].MaGioHang);
+            for (int i = 1; i < List_Cart.Count; i++)
+            {
+                if (max < int.Parse(List_Cart[i].MaGioHang))
+                {
+                    max = int.Parse(List_Cart[i].MaGioHang);
+                }
+
+            }
+            max++;
+            Cart cartt = new Cart();
+            cartt.MaGioHang = max.ToString();
+            cartt.MaKh = idCustomer.Substring(2, idCustomer.Length - 4);
+            if (Intent.GetStringExtra("ServiceName") == null)
+                cartt.MaCombo = Intent.GetStringExtra("ServiceId");
+            else
+                cartt.MaDv = Intent.GetStringExtra("ServiceId");
+            var results = await myAPI.PostGioHang(cartt);
+            Toast.MakeText(this, results, ToastLength.Short).Show();
+        }
+
+
     }
 }

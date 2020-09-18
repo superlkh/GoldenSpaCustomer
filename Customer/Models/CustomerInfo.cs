@@ -26,6 +26,7 @@ namespace Customer.Models
         [MinLength(2)]
         public string Email { get; set; }
         public string DiaChi { get; set; }
+        public bool GioiTinh { get; set; }
         public DateTime? NgaySinh { get; set; }
         [Required]
         [MinLength(10)]

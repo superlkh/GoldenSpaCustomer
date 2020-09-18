@@ -23,6 +23,7 @@ namespace Customer.Fragment
         TextView customerName;
         LinearLayout changePassword;
         LinearLayout updateAccount;
+        string idCustomer, imageCustomer;
 
         public override void OnCreate(Bundle savedInstanceState)
         {
@@ -50,9 +51,11 @@ namespace Customer.Fragment
         private async void getInfoCustomer()
         {
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
-            var idCustomer = await myAPI.GetIdCustomer("0123456789");
+            idCustomer = await myAPI.GetIdCustomer("0123456789");
             string cus = idCustomer.Substring(2, idCustomer.Length - 4);
             var customerInfo = await myAPI.GetCustomerInfo(cus);
+
+            imageCustomer = customerInfo.AnhKh;
 
             Picasso.Get().Load(customerInfo.AnhKh).Into(avar);
             customerName.Text = customerInfo.TenKh;
@@ -65,6 +68,9 @@ namespace Customer.Fragment
 
         private void UpdateAccount_Click(object sender, EventArgs e)
         {
+            var intent = new Intent(Activity,typeof(Customer.activity_UpdateAccount_Customer));
+            intent.PutExtra("MaKH", idCustomer);
+            intent.PutExtra("AnhKH", imageCustomer);
             StartActivity(new Android.Content.Intent(Activity, typeof(Customer.activity_UpdateAccount_Customer)));
         }
     }
