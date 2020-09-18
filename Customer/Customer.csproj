@@ -75,6 +75,8 @@
     <Compile Include="Fragment\ShoppingCardShoppingCart.cs" />
     <Compile Include="Fragment\ShoppingCardHistoryAppointment.cs" />
     <Compile Include="Models\AdressOfService.cs" />
+    <Compile Include="Models\AppointmentDetail.cs" />
+    <Compile Include="Models\AppointmentInfo.cs" />
     <Compile Include="Models\Cart.cs" />
     <Compile Include="Models\Comment.cs" />
     <Compile Include="Models\CustomerInfo.cs" />
@@ -84,6 +86,7 @@
     <Compile Include="Models\ListOutlet.cs" />
     <Compile Include="Models\ListPromotion.cs" />
     <Compile Include="Models\ListService.cs" />
+    <Compile Include="Models\Outlet.cs" />
     <Compile Include="Models\TotalFeedback.cs" />
     <Compile Include="R_activity\activity_Account_Customer.cs" />
     <Compile Include="R_activity\activity_Appointment_Customer.cs" />

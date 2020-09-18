@@ -60,7 +60,7 @@
                     android:background="#FFF"/>
 
                 <TextView
-                    android:id="@+id/txtServiceName_ItemRecentAppointment_Appointment_Customer"
+                    android:id="@+id/txtTotalOutlet_ItemRecentAppointment_Appointment_Customer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="2"

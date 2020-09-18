@@ -143,8 +143,14 @@ namespace Customer
             DateTime ngaysinh;
             ngaysinh = new DateTime(cyear, cmonth, cday);
             customer.NgaySinh = ngaysinh;
-            customer.ChieuCao = Int32.Parse(heigh.Text);
-            customer.CanNang = Int32.Parse(weight.Text);
+            if (heigh.Text.ToString() == "")
+                customer.ChieuCao = null;
+            else
+                customer.ChieuCao = Int32.Parse(heigh.Text);
+            if (weight.Text.ToString() == "")
+                customer.CanNang = null;
+            else
+                customer.CanNang = Int32.Parse(weight.Text);
             customer.AnhKh = Intent.GetStringExtra("AnhKH");
             var notice = myAPI.UpdateCustomerInfo(customer);
             Toast.MakeText(this, "Sửa thông tin thành công", ToastLength.Short).Show();

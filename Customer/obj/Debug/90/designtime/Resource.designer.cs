@@ -4545,31 +4545,28 @@ namespace Customer
 			public const int txtServiceName_DetailService_Customer = 2131296669;
 			
 			// aapt resource value: 0x7F09019E
-			public const int txtServiceName_ItemRecentAppointment_Appointment_Customer = 2131296670;
+			public const int txtServiceName_ItemService_DetailService_Customer = 2131296670;
 			
 			// aapt resource value: 0x7F09019F
-			public const int txtServiceName_ItemService_DetailService_Customer = 2131296671;
+			public const int txtServiceName_ItemService_ShoppingCardShoppingCart_Customer = 2131296671;
 			
 			// aapt resource value: 0x7F0901A0
-			public const int txtServiceName_ItemService_ShoppingCardShoppingCart_Customer = 2131296672;
+			public const int txtServiceName_Service_Customer = 2131296672;
 			
 			// aapt resource value: 0x7F0901A1
-			public const int txtServiceName_Service_Customer = 2131296673;
+			public const int txtServicePrice_ItemRelativeDiscount_Service_Customer = 2131296673;
 			
 			// aapt resource value: 0x7F0901A2
-			public const int txtServicePrice_ItemRelativeDiscount_Service_Customer = 2131296674;
-			
-			// aapt resource value: 0x7F0901A3
-			public const int txtServicePrice_Service_Customer = 2131296675;
+			public const int txtServicePrice_Service_Customer = 2131296674;
 			
 			// aapt resource value: 0x7F090051
 			public const int TxtSex_UpdateAccount_Customer = 2131296337;
 			
-			// aapt resource value: 0x7F0901A4
-			public const int txtSoPhong_ItemService_DetailService_Customer = 2131296676;
+			// aapt resource value: 0x7F0901A3
+			public const int txtSoPhong_ItemService_DetailService_Customer = 2131296675;
 			
-			// aapt resource value: 0x7F0901A5
-			public const int txtTen_DetailAppointment_Customer = 2131296677;
+			// aapt resource value: 0x7F0901A4
+			public const int txtTen_DetailAppointment_Customer = 2131296676;
 			
 			// aapt resource value: 0x7F090052
 			public const int TxtTherapist_BookAppointment_Customer = 2131296338;
@@ -4580,32 +4577,35 @@ namespace Customer
 			// aapt resource value: 0x7F090054
 			public const int TxtTime_BookAppointment_Customer = 2131296340;
 			
+			// aapt resource value: 0x7F0901A5
+			public const int txtTime_DetailAppointment_Customer = 2131296677;
+			
 			// aapt resource value: 0x7F0901A6
-			public const int txtTime_DetailAppointment_Customer = 2131296678;
+			public const int txtTime_ItemAppointment_ShoppingCardHistoryAppointment_Customer = 2131296678;
 			
 			// aapt resource value: 0x7F0901A7
-			public const int txtTime_ItemAppointment_ShoppingCardHistoryAppointment_Customer = 2131296679;
+			public const int txtTime_ItemRecentAppointment_Appointment_Customer = 2131296679;
 			
 			// aapt resource value: 0x7F0901A8
-			public const int txtTime_ItemRecentAppointment_Appointment_Customer = 2131296680;
-			
-			// aapt resource value: 0x7F0901A9
-			public const int txtTime_ItemService_DetailService_Customer = 2131296681;
+			public const int txtTime_ItemService_DetailService_Customer = 2131296680;
 			
 			// aapt resource value: 0x7F090055
 			public const int TxtTime_ItemService_ShoppingCardShoppingCart_Customer = 2131296341;
 			
-			// aapt resource value: 0x7F0901AA
-			public const int txtTongDichVu_DetailAppointment_Customer = 2131296682;
+			// aapt resource value: 0x7F0901A9
+			public const int txtTongDichVu_DetailAppointment_Customer = 2131296681;
 			
-			// aapt resource value: 0x7F0901AB
-			public const int txtTongGia_DetailAppointment_Customer = 2131296683;
+			// aapt resource value: 0x7F0901AA
+			public const int txtTongGia_DetailAppointment_Customer = 2131296682;
 			
 			// aapt resource value: 0x7F090056
 			public const int TxtTopic_Comment_Customer = 2131296342;
 			
+			// aapt resource value: 0x7F0901AB
+			public const int txtTopic_UpdateInfo_Customer = 2131296683;
+			
 			// aapt resource value: 0x7F0901AC
-			public const int txtTopic_UpdateInfo_Customer = 2131296684;
+			public const int txtTotalOutlet_ItemRecentAppointment_Appointment_Customer = 2131296684;
 			
 			// aapt resource value: 0x7F0901AD
 			public const int txtTotalPrice_DetailAppointment_Customer = 2131296685;

@@ -194,6 +194,22 @@ namespace GoldenSpa.API
         }
 
         /// <inheritdoc />
+        Task<Outlet> IMyAPI.GetOutletFromId(string outletId)
+        {
+            var arguments = new object[] { outletId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetOutletFromId", new Type[] { typeof(string) });
+            return (Task<Outlet>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<AppointmentInfo>> IMyAPI.GetAppointment(string customerId)
+        {
+            var arguments = new object[] { customerId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetAppointment", new Type[] { typeof(string) });
+            return (Task<List<AppointmentInfo>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
         Task<string> IMyAPI.PostGioHang(Cart cart)
         {
             var arguments = new object[] { cart };

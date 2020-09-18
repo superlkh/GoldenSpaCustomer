@@ -197,6 +197,7 @@ namespace Customer.Fragment
                 intent.PutExtra("ServiceId", mCombo[e].MaDV);
                 intent.PutExtra("ComboName", mCombo[e].NameService);
                 intent.PutExtra("PromotionName", mCombo[e].price.ToString());
+                intent.PutExtra("Index", e.ToString());
                 StartActivity(intent);
 
             };
@@ -249,6 +250,7 @@ namespace Customer.Fragment
             for (int i = 0; i < resultService.Count; i++)
             {
                 var DataSample_Services_Outlet_ViewModel = new ListPromotion();
+                DataSample_Services_Outlet_ViewModel.MaDV = resultService[i].MaDV;
                 DataSample_Services_Outlet_ViewModel.Image = resultService[i].Image;
                 DataSample_Services_Outlet_ViewModel.NameService = resultService[i].NameService;
                 DataSample_Services_Outlet_ViewModel.price = resultService[i].price;
@@ -259,6 +261,7 @@ namespace Customer.Fragment
             for (int i = resultService.Count; i < max; i++)
             {
                 var DataSample_Services_Outlet_ViewModel = new ListPromotion();
+                DataSample_Services_Outlet_ViewModel.MaDV = resultCombo[i - resultService.Count].MaDV;
                 DataSample_Services_Outlet_ViewModel.Image = resultCombo[i- resultService.Count].Image;
                 DataSample_Services_Outlet_ViewModel.NameService = resultCombo[i - resultService.Count].NameService;
                 DataSample_Services_Outlet_ViewModel.price = resultCombo[i - resultService.Count].price;
@@ -270,10 +273,14 @@ namespace Customer.Fragment
             mAdapterUsedService = new Home_UsedService_Customer_Adapter(mUsedService);
             mRecyclerViewUsedService.SetAdapter(mAdapterUsedService);
 
-            mAdapterCombo.ItemClick += (s, e) =>
+            mAdapterUsedService.ItemClick += (s, e) =>
             {
-                int photoNum = e + 1;
-                Toast.MakeText(Context, "This is photo number " + photoNum, ToastLength.Short).Show();
+                var intent = new Intent(Activity, typeof(Customer.activity_Service_Customer));
+                intent.PutExtra("ServiceId", mUsedService[e].MaDV);
+                intent.PutExtra("ServiceName", mUsedService[e].NameService);
+                intent.PutExtra("PromotionName", mUsedService[e].price.ToString());
+                intent.PutExtra("Index", e.ToString());
+                StartActivity(intent);
             };
         }
 

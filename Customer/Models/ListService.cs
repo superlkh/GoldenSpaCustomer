@@ -12,6 +12,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Customer.Models
 {
+    //service và combo
     public class ListService
     {
         [Required]
