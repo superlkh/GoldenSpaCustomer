@@ -54,11 +54,12 @@ namespace Customer.Fragment
             idCustomer = await myAPI.GetIdCustomer("0123456789");
             string cus = idCustomer.Substring(2, idCustomer.Length - 4);
             var customerInfo = await myAPI.GetCustomerInfo(cus);
+            idCustomer = cus;
 
-            imageCustomer = customerInfo.AnhKh;
+            imageCustomer = customerInfo.anhKh;
 
-            Picasso.Get().Load(customerInfo.AnhKh).Into(avar);
-            customerName.Text = customerInfo.TenKh;
+            Picasso.Get().Load(customerInfo.anhKh).Into(avar);
+            customerName.Text = customerInfo.tenKh;
         }
 
         private void ChangePass_CLick(object sender, EventArgs e)
@@ -71,7 +72,7 @@ namespace Customer.Fragment
             var intent = new Intent(Activity,typeof(Customer.activity_UpdateAccount_Customer));
             intent.PutExtra("MaKH", idCustomer);
             intent.PutExtra("AnhKH", imageCustomer);
-            StartActivity(new Android.Content.Intent(Activity, typeof(Customer.activity_UpdateAccount_Customer)));
+            StartActivity(intent);
         }
     }
 }

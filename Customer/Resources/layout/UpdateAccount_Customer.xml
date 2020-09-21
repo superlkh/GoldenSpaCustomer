@@ -102,15 +102,28 @@
                 android:layout_marginTop="10dp"
                 android:layout_below="@+id/EdtEmail_UpdateAccount_Customer"/>
 
-            <TextView
-                android:id="@+id/txtAdress_UpdateAccount_Customer"
+
+            <LinearLayout
+                android:id="@+id/linearLayoutMap_UpdateAccount_Customer"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_below="@+id/TxtDiaChi_UpdateAccount_Customer">
+                <TextView
+                android:id="@+id/txtAdress_UpdateAccount_Customer"
+                android:layout_width="320dp"
                 android:layout_height="wrap_content"
                 android:textSize="20dp"
                 android:layout_marginLeft="10dp"
                 android:text="địa chỉ"
                 android:layout_below="@+id/TxtDiaChi_UpdateAccount_Customer"/>
-
+                <ImageButton
+                    android:id="@+id/imgbtxMap_Account_Customer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map_customer"/>
+            </LinearLayout>
+            
 
             <TextView
                 android:id="@+id/TxtSex_UpdateAccount_Customer"
@@ -122,7 +135,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
-                android:layout_below="@+id/txtAdress_UpdateAccount_Customer"/>
+                android:layout_below="@+id/linearLayoutMap_UpdateAccount_Customer"/>
 
             <LinearLayout
                 android:id="@+id/LinearLayoutSex_UpdateAccount_Customer"

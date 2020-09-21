@@ -64,6 +64,10 @@ namespace GoldenSpa.API
         [Get("/api/services/{serviceId}")]
         Task<DetailService> GetService(string serviceId);
 
+        //lấy thông tin combo từ mã
+        [Get("/api/combo/{comboId}")]
+        Task<DetailService> GetCombo(string comboId);
+
         //lấy tổng số sao
         [Get("/api/feedbacks/{serviceId}")]
         Task<List<TotalFeedback>> GetStar(string serviceId);
@@ -71,6 +75,10 @@ namespace GoldenSpa.API
         //lấy danh sách chi nhánh có chứa dịch vụ
         [Get("/api/services/address/{serviceId}")]
         Task<List<AddressOfService>> GetOutletFromService(string serviceId);
+
+        //lấy danh sách chi nhánh có chứa combo
+        [Get("/api/combo/address/{comboId}")]
+        Task<List<AddressOfService>> GetOutletFromCombo(string comboId);
 
         //lấy comment của 1 dịch vụ
         [Get("/api/feedbacks/comment/{serviceId}")]
@@ -125,8 +133,8 @@ namespace GoldenSpa.API
         Task<string> PostGioHang(Cart cart);
 
         //Sửa thông tin khách hàng--chưa test
-        [Put("/api/customer/{cus}")]
-        Task<string> UpdateCustomerInfo(CustomerInfo cus);
+        [Put("/api/customer/{id}")]
+        Task<string> UpdateCustomerInfo(string id,[Body] CustomerInfo cus);
 
 
     }

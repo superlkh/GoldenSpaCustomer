@@ -43,10 +43,13 @@ namespace Customer
         {
             Customer_ShoppingCardShoppingCart_Service_ViewModel_ViewHolder vh = holder as Customer_ShoppingCardShoppingCart_Service_ViewModel_ViewHolder;
 
-            //myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
-            //var result = await myAPI.GetOutletFromService(cart_list[position].MaDv);
+            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
+            var result = await myAPI.GetOutletFromService(cart_list[position].MaDv);
 
-            getOutlet a = new getOutlet();
+            holder.
+
+            
+            
             //a.GetOutletToSpinner(vh.Outlet, result);
 
             if (cart_list[position].Anhdv=="")
@@ -55,17 +58,16 @@ namespace Customer
             }
             else
                 Picasso.Get().Load(cart_list[position].Anhdv).Into(vh.ServiceImg);
+            
             //vh.OutletName.Text = cart_list[position].ten;
             //vh.Time.Text = cart_list[position].NgayHen.ToString();
+            getListOutlet(cart_list[position].MaDv, cart_list[position].MaCombo, vh.Outlet,);
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)
         {
             View itemView = LayoutInflater.From(parent.Context).Inflate(Resource.Layout.Item_ShoppingCardShoppingCart_Service_Customer, parent, false);
             Customer_ShoppingCardShoppingCart_Service_ViewModel_ViewHolder vh = new Customer_ShoppingCardShoppingCart_Service_ViewModel_ViewHolder(itemView, OnClick);
-            getTherapist();
-
-            //var resultTherapist=myAPI.GetTherapists(result[0])
             return vh;
         }
         private void OnClick(int obj)
@@ -73,6 +75,51 @@ namespace Customer
             if (ItemClick != null)
                 ItemClick(this, obj);
         }
+
+
+        public async void getListOutlet(string serviceId, string comboId, Spinner spn, ViewGroup parent)
+        {
+            myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
+            List<AddressOfService> result;
+            if (serviceId == null)
+            {
+                result = await myAPI.GetOutletFromCombo(comboId);
+            }
+            else
+            {
+                result = await myAPI.GetOutletFromService(serviceId);
+            }
+            //xử lí sự kiện chọn item
+            //listOutlet.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(listOutlet_ItemSelected); 
+
+            List<KeyValuePair<string, string>> outlets_pair = new List<KeyValuePair<string, string>>(result.Count);
+            var outlets = new List<string>(result.Count);
+
+            for (int i = 0; i < result.Count; i++)
+            {
+                var item = new KeyValuePair<string, string>(result[i].MaChiNhanh, result[i].DiaChi);
+                outlets_pair.Add(item);
+            }
+            foreach (var item in outlets_pair)
+                outlets.Add(item.Value);
+
+            
+
+            var adapter = new ArrayAdapter<string>(parent.Context, Android.Resource.Layout.SimpleSpinnerItem, outlets);
+            spn.Adapter = adapter;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         //public DateTime(int year, int day, int month);
         private async void getTherapist()
         {

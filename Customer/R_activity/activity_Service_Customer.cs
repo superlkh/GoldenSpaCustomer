@@ -69,10 +69,10 @@ namespace Customer
                 servicePrice.Text = Intent.GetStringExtra("PromotionName");
 
             listOutlet = FindViewById<Spinner>(Resource.Id.spnOutlet_Service_Customer);
-            //getListOutlet();
+            getListOutlet();
 
             describe = FindViewById<TextView>(Resource.Id.txtContentDescripe_Service_Customer);
-            //getDescribe();
+            getDescribe();
 
             cv = (ChartView)FindViewById(Resource.Id.chartView1);
             rateStar = FindViewById<TextView>(Resource.Id.txtRateStar_Service_Customer);
@@ -119,9 +119,18 @@ namespace Customer
         public async void getListOutlet()
         {
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
-            string id = Intent.GetStringExtra("ServiceId");
-            var result = await myAPI.GetOutletFromService(Intent.GetStringExtra("ServiceId"));
-
+            string id;
+            List<AddressOfService> result;
+            if (Intent.GetStringExtra("ServiceId") == null)
+            {
+                id = Intent.GetStringExtra("ComboId");
+                result = await myAPI.GetOutletFromCombo(Intent.GetStringExtra("ComboId"));
+            }
+            else
+            {
+                id = Intent.GetStringExtra("ServiceId");
+                result = await myAPI.GetOutletFromService(Intent.GetStringExtra("ServiceId"));
+            }
             //xử lí sự kiện chọn item
             //listOutlet.ItemSelected += new EventHandler<AdapterView.ItemSelectedEventArgs>(listOutlet_ItemSelected); 
 
@@ -145,7 +154,11 @@ namespace Customer
         public async void getDescribe()
         {
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
-            var result = await myAPI.GetService(Intent.GetStringExtra("ServiceId"));
+            DetailService result;
+            if (Intent.GetStringExtra("ServiceId") == null)
+                result = await myAPI.GetCombo(Intent.GetStringExtra("ComboId"));
+            else
+                result = await myAPI.GetService(Intent.GetStringExtra("ServiceId"));
             describe.Text = result.MoTa;
         }
 

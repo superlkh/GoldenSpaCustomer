@@ -151,7 +151,7 @@ namespace Customer.Fragment
             mAdapterCombo.ItemClick += (s, e) =>
             {
                 var intent = new Intent(Activity, typeof(Customer.activity_Service_Customer));
-                intent.PutExtra("ServiceId", result[e].MaDV);
+                intent.PutExtra("ComboId", result[e].MaDV);
                 intent.PutExtra("ComboName", result[e].NameService);
                 intent.PutExtra("PromotionName", result[e].price.ToString());
                 intent.PutExtra("Index", e.ToString());
@@ -220,9 +220,15 @@ namespace Customer.Fragment
             mAdapterUsedService.ItemClick += (s, e) =>
             {
                 var intent = new Intent(Activity, typeof(Customer.activity_Service_Customer));
-                intent.PutExtra("ServiceId", mUsedService[e].MaDV);
+                if (e >=0 && e <resultService.Count)
+                    intent.PutExtra("ServiceId", mUsedService[e].MaDV);
+                else
+                    intent.PutExtra("ComboId", mUsedService[e].MaDV);
                 intent.PutExtra("ServiceName", mUsedService[e].NameService);
-                intent.PutExtra("PromotionName", mUsedService[e].price.ToString());
+                if (mUsedService[e].NamePromotion==null)
+                    intent.PutExtra("PromotionName", mUsedService[e].price.ToString());
+                else
+                    intent.PutExtra("PromotionName", mUsedService[e].NamePromotion.ToString());
                 intent.PutExtra("Index", e.ToString());
                 StartActivity(intent);
             };

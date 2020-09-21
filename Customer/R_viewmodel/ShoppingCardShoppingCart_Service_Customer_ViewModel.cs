@@ -41,7 +41,7 @@ namespace Customer
             RadioTherapistYes = itemview.FindViewById<RadioButton>(Resource.Id.RadioBtxTherapist_Yes__ItemService_ShoppingCardShoppingCart_Customer);
             RadioTherapistNo = itemview.FindViewById<RadioButton>(Resource.Id.RadioBtxTherapist_No__ItemService_ShoppingCardShoppingCart_Customer);
             Check = itemview.FindViewById<TextView>(Resource.Id.cbRoom_ItemService_ShoppingCardShoppingCart_Customer);
-            itemview.Click += (sender, e) => listener(base.Position);
+            itemview.Click += (sender, e) => listener(base.LayoutPosition);
         }
     }
 

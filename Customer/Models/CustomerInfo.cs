@@ -18,22 +18,22 @@ namespace Customer.Models
     {
         [Required]
         [MinLength(2)]
-        public string MaKh { get; set; }
+        public string maKh { get; set; }
         [Required]
         [MinLength(2)]
-        public string TenKh { get; set; }
+        public string tenKh { get; set; }
         [Required]
         [MinLength(2)]
-        public string Email { get; set; }
-        public string DiaChi { get; set; }
-        public bool GioiTinh { get; set; }
-        public DateTime? NgaySinh { get; set; }
+        public string email { get; set; }
+        public string diaChi { get; set; }
+        public bool gioitinh { get; set; }
+        public DateTime? ngaySinh { get; set; }
         [Required]
         [MinLength(10)]
         [MaxLength(10)]
-        public string Sdt { get; set; }
-        public int? CanNang { get; set; }
-        public int? ChieuCao { get; set; }
-        public string AnhKh { get; set; }
+        public string sdt { get; set; }
+        public int? canNang { get; set; }
+        public int? chieuCao { get; set; }
+        public string anhKh { get; set; }
     }
 }

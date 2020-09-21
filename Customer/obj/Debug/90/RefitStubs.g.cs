@@ -155,6 +155,14 @@ namespace GoldenSpa.API
         }
 
         /// <inheritdoc />
+        Task<DetailService> IMyAPI.GetCombo(string comboId)
+        {
+            var arguments = new object[] { comboId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetCombo", new Type[] { typeof(string) });
+            return (Task<DetailService>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
         Task<List<TotalFeedback>> IMyAPI.GetStar(string serviceId)
         {
             var arguments = new object[] { serviceId };
@@ -167,6 +175,14 @@ namespace GoldenSpa.API
         {
             var arguments = new object[] { serviceId };
             var func = requestBuilder.BuildRestResultFuncForMethod("GetOutletFromService", new Type[] { typeof(string) });
+            return (Task<List<AddressOfService>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<AddressOfService>> IMyAPI.GetOutletFromCombo(string comboId)
+        {
+            var arguments = new object[] { comboId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetOutletFromCombo", new Type[] { typeof(string) });
             return (Task<List<AddressOfService>>)func(Client, arguments);
         }
 
@@ -275,10 +291,10 @@ namespace GoldenSpa.API
         }
 
         /// <inheritdoc />
-        Task<string> IMyAPI.UpdateCustomerInfo(CustomerInfo cus)
+        Task<string> IMyAPI.UpdateCustomerInfo(string id, CustomerInfo cus)
         {
-            var arguments = new object[] { cus };
-            var func = requestBuilder.BuildRestResultFuncForMethod("UpdateCustomerInfo", new Type[] { typeof(CustomerInfo) });
+            var arguments = new object[] { id, cus };
+            var func = requestBuilder.BuildRestResultFuncForMethod("UpdateCustomerInfo", new Type[] { typeof(string), typeof(CustomerInfo) });
             return (Task<string>)func(Client, arguments);
         }
     }

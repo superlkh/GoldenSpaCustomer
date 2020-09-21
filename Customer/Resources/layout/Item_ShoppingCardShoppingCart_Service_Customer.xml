@@ -42,20 +42,21 @@
                             android:id="@+id/imglocation_ItemService_ShoppingCardShoppingCart_Customer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:src="@drawable/ic_location_customer"
+                            android:src="@drawable/ic_service_customer"
                             android:background="#FFF"/>
 
                         <TextView
-                            android:id="@+id/txtOutlet_ItemService_ShoppingCardShoppingCart_Customer"
+                            android:id="@+id/txtServiceName_ItemService_ShoppingCardShoppingCart_Customer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="2"
-                            android:text="Chi nhánh Nguyễn Bỉnh Khiêm"
+                            android:text="Tên dịch vụ"
                             android:textSize="15dp"
                             android:paddingLeft="5dp"
                             android:textColor="#000"/>
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/LinearLayoutPromotion_ItemService_ShoppingCardShoppingCart_Customer"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
@@ -68,11 +69,11 @@
                             android:background="#FFF"/>
 
                         <TextView
-                            android:id="@+id/txtServiceName_ItemService_ShoppingCardShoppingCart_Customer"
+                            android:id="@+id/txtPromotion_ItemService_ShoppingCardShoppingCart_Customer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:maxLines="2"
-                            android:text="Mát xoa"
+                            android:text="Tên khuyến mãi "
                             android:paddingLeft="5dp"
                             android:textColor="#000"
                             android:paddingRight="50dp"/>
@@ -90,6 +91,7 @@
             </FrameLayout>
 
             <LinearLayout
+                android:id="@+id/linearLayout1_ItemService_ShoppingCardShoppingCart_Customer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#B4DFD5D5"

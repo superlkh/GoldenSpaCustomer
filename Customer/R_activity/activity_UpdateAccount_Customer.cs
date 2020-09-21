@@ -24,7 +24,7 @@ namespace Customer
         IMyAPI myAPI;
 
         ImageView back;
-        ImageButton birth;
+        ImageButton birth, map2;
         EditText name, email, heigh, weight;
         TextView birthday, address, phone;
         RadioButton male, female;
@@ -41,6 +41,7 @@ namespace Customer
             name = FindViewById<EditText>(Resource.Id.EdtName_UpdateAccount_Customer);
             email = FindViewById<EditText>(Resource.Id.EdtEmail_UpdateAccount_Customer);
             address = FindViewById<TextView>(Resource.Id.txtAdress_UpdateAccount_Customer);
+            map2 = FindViewById<ImageButton>(Resource.Id.imgbtxMap_Account_Customer);
             male = FindViewById<RadioButton>(Resource.Id.RadioBtxSex_male_UpdateAccount_Customer);
             female = FindViewById<RadioButton>(Resource.Id.RadioBtxSex_female_UpdateAccount_Customer);
             phone = FindViewById<TextView>(Resource.Id.EdtPhoneNumber_UpdateAccount_Customer);
@@ -54,16 +55,22 @@ namespace Customer
 
             back.Click += Back_Click;
             birth.Click += Birth_Click;
-
-           
-
+            map2.Click += Map2_Click;
 
 
 
-            
+
+
+
+
             sendConfrim.Click += SendConfirm_Click;
         }
 
+        private void Map2_Click(object sender, EventArgs e)
+        {
+            Finish();
+            StartActivity(new Intent(this, typeof(Customer.Activity_Map_Customer)));
+        }
 
         private async void GetInfo()
         {
@@ -71,21 +78,24 @@ namespace Customer
             var customerId = await myAPI.GetIdCustomer("0123456789");
             customerId = customerId.Substring(2, customerId.Length - 4);
             var result = await myAPI.GetCustomerInfo(customerId);
-            name.Text = result.TenKh;
-            email.Text = result.Email;
-            address.Text = result.DiaChi;
-            phone.Text = result.Sdt;
-            if (result.GioiTinh == true)
+            name.Text = result.tenKh;
+            email.Text = result.email;
+            if (Intent.GetStringExtra("tt") == "1")
+                address.Text = Intent.GetStringExtra("addrData");
+            else
+                address.Text = result.diaChi;
+            phone.Text = result.sdt;
+            if (result.gioitinh == true)
                 male.Checked = true;
             else
                 female.Checked = true;
-            birthday.Text = (result.NgaySinh ?? default(DateTime)).ToString("dd-MM-yyyy");
-            cday = Int32.Parse(((result.NgaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(0, 2));
-            cmonth = Int32.Parse(((result.NgaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(3, 2));
-            cyear = Int32.Parse(((result.NgaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(6, 4));
+            birthday.Text = (result.ngaySinh ?? default(DateTime)).ToString("dd-MM-yyyy");
+            cday = Int32.Parse(((result.ngaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(0, 2));
+            cmonth = Int32.Parse(((result.ngaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(3, 2));
+            cyear = Int32.Parse(((result.ngaySinh ?? default(DateTime)).ToString("dd-MM-yyyy")).Substring(6, 4));
             //Toast.MakeText(this, result.NgaySinh.ToString(), ToastLength.Short).Show();
-            heigh.Text = result.ChieuCao.ToString();
-            weight.Text = result.CanNang.ToString();
+            heigh.Text = result.chieuCao.ToString();
+            weight.Text = result.canNang.ToString();
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -127,42 +137,34 @@ namespace Customer
             return null;
         }
 
-        private void SendConfirm_Click(object sender, EventArgs e)
+        private async void SendConfirm_Click(object sender, EventArgs e)
         {
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
             CustomerInfo customer = new CustomerInfo();
-            customer.MaKh = Intent.GetStringExtra("MaKH");
-            customer.TenKh = name.Text;
-            customer.Email = email.Text;
-            customer.DiaChi = address.Text;
+            customer.maKh = Intent.GetStringExtra("MaKH");
+            customer.tenKh = name.Text;
+            customer.email = email.Text;
+            customer.diaChi = address.Text;
             if (male.Checked == true)
-                customer.GioiTinh = true;
+                customer.gioitinh = true;
             else
-                customer.GioiTinh = false;
-            customer.Sdt = phone.Text;
+                customer.gioitinh = false;
+            customer.sdt = phone.Text;
             DateTime ngaysinh;
             ngaysinh = new DateTime(cyear, cmonth, cday);
-            customer.NgaySinh = ngaysinh;
+            customer.ngaySinh = ngaysinh;
             if (heigh.Text.ToString() == "")
-                customer.ChieuCao = null;
+                customer.chieuCao = null;
             else
-                customer.ChieuCao = Int32.Parse(heigh.Text);
+                customer.chieuCao = Int32.Parse(heigh.Text);
             if (weight.Text.ToString() == "")
-                customer.CanNang = null;
+                customer.canNang = null;
             else
-                customer.CanNang = Int32.Parse(weight.Text);
-            customer.AnhKh = Intent.GetStringExtra("AnhKH");
-            var notice = myAPI.UpdateCustomerInfo(customer);
-            Toast.MakeText(this, "Sửa thông tin thành công", ToastLength.Short).Show();
+                customer.canNang = Int32.Parse(weight.Text);
+            customer.anhKh = Intent.GetStringExtra("AnhKH");
+            var notice = await myAPI.UpdateCustomerInfo(customer.maKh,customer);
+            Toast.MakeText(this, notice.ToString(), ToastLength.Short).Show();
 
-            Finish();
-            SetContentView(Resource.Layout.Account_Customer);
-            var navBottom = FindViewById<Android.Support.Design.Widget.BottomNavigationView>(Resource.Id.bottom_navigation);
-            navBottom.NavigationItemSelected += (s, b) =>
-            {
-                var trans = SupportFragmentManager.BeginTransaction();
-                trans.Replace(Resource.Id.frame_container, new Fragment.Account()).Commit();
-            };
         }
     }
 }
