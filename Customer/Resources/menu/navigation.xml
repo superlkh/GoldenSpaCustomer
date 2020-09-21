@@ -10,7 +10,7 @@
         android:id="@+id/navigation_appointment_customer"
         android:icon="@drawable/ic_appointment_customer"
         android:title="APPOINTMENT" />
-
+	
 	<item
         android:id="@+id/navigation_shoppingcart_customer"
         android:icon="@drawable/ic_shoppingcart_customer"

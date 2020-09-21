@@ -9,7 +9,7 @@ using System.Collections.Generic;
 
 namespace Customer
 {
-    //[Activity(Label = "RecycleView", MainLauncher = true, Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
+    //[Activity(Label = "RecycleView", Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
     class activity_Appointment_Customer : Activity
     {
         RecyclerView.LayoutManager mLayoutManagerRecentAppointment;

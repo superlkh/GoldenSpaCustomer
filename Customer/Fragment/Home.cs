@@ -23,22 +23,18 @@ namespace Customer.Fragment
 
         RecyclerView.LayoutManager mLayoutManagerAdvertisement;
         RecyclerView mRecyclerViewAdvertisement;
-        List<ListAdvertisement> mAdvertisement;
         Home_Advertisement_Customer_Adapter mAdapterAdvertisement;
 
-        RecyclerView.LayoutManager mLayoutManagerDiscount; // set vertical hay horizontal
+        RecyclerView.LayoutManager mLayoutManagerDiscount; 
         RecyclerView mRecyclerViewDiscount;
-        List<ListPromotion> mDiscount;// thong tin hien thi len 1 item
         Home_Discount_Customer_Adapter mAdapterDiscount;
 
-        RecyclerView.LayoutManager mLayoutManagerCombo; // set vertical hay horizontal
+        RecyclerView.LayoutManager mLayoutManagerCombo;
         RecyclerView mRecyclerViewCombo;
-        List<ListPromotion> mCombo;// thong tin hien thi len 1 item
         Home_Combo_Customer_Adapter mAdapterCombo;
 
         RecyclerView.LayoutManager mLayoutManagerOutlet;
         RecyclerView mRecyclerViewOutlet;
-        List<ListOutlet> mOutlet;
         Home_Outlet_Customer_Adapter mAdapterOutlet;
 
         RecyclerView.LayoutManager mLayoutManagerUsedService;
@@ -114,18 +110,8 @@ namespace Customer.Fragment
             // lay du lieu tu db
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
             var result = await myAPI.GetListAdvertisement();
-            mAdvertisement = new List<ListAdvertisement>(result.Count());
 
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                var DataSample_Services_Advertisement_ViewModel = new ListAdvertisement();
-                DataSample_Services_Advertisement_ViewModel.Image = result[i].Image;
-                mAdvertisement.Add(DataSample_Services_Advertisement_ViewModel);
-            }
-
-
-            mAdapterAdvertisement = new Home_Advertisement_Customer_Adapter(mAdvertisement);
+            mAdapterAdvertisement = new Home_Advertisement_Customer_Adapter(result);
             mRecyclerViewAdvertisement.SetAdapter(mAdapterAdvertisement);
         }
 
@@ -134,21 +120,6 @@ namespace Customer.Fragment
             // lay du lieu tu db
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
             var result = await myAPI.GetListPromotion();
-            mDiscount = new List<ListPromotion>(result.Count());
-
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                var DataSample_Services_Outlet_ViewModel = new ListPromotion();
-                DataSample_Services_Outlet_ViewModel.MaDV = result[i].MaDV;
-                DataSample_Services_Outlet_ViewModel.Image = result[i].Image;
-                DataSample_Services_Outlet_ViewModel.NameService = result[i].NameService;
-                DataSample_Services_Outlet_ViewModel.price = result[i].price;
-                DataSample_Services_Outlet_ViewModel.Discount = result[i].Discount;
-                DataSample_Services_Outlet_ViewModel.TotalOutlets = result[i].TotalOutlets;
-                mDiscount.Add(DataSample_Services_Outlet_ViewModel);
-            }
-
 
             mAdapterDiscount = new Home_Discount_Customer_Adapter(result);
             mRecyclerViewDiscount.SetAdapter(mAdapterDiscount);
@@ -156,9 +127,9 @@ namespace Customer.Fragment
             mAdapterDiscount.ItemClick += (s, e) =>
             {
                 var intent = new Intent(Activity, typeof(Customer.activity_Service_Customer));
-                intent.PutExtra("ServiceId", mDiscount[e].MaDV);
-                intent.PutExtra("ServiceName", mDiscount[e].NameService);
-                intent.PutExtra("PromotionName", mDiscount[e].NamePromotion);
+                intent.PutExtra("ServiceId", result[e].MaDV);
+                intent.PutExtra("ServiceName", result[e].NameService);
+                intent.PutExtra("PromotionName", result[e].NamePromotion);
                 intent.PutExtra("Index", e.ToString());
                 StartActivity(intent);
 
@@ -173,30 +144,16 @@ namespace Customer.Fragment
             // lay du lieu tu db
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
             var result = await myAPI.GetListCombo();
-            mCombo = new List<ListPromotion>(result.Count());
-
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                var DataSample_Services_Outlet_ViewModel = new ListPromotion();
-                DataSample_Services_Outlet_ViewModel.Image = result[i].Image;
-                DataSample_Services_Outlet_ViewModel.NameService = result[i].NameService;
-                DataSample_Services_Outlet_ViewModel.price = result[i].price;
-                DataSample_Services_Outlet_ViewModel.TotalOutlets = result[i].TotalOutlets;
-                mCombo.Add(DataSample_Services_Outlet_ViewModel);
-
-            }
-
-
-            mAdapterCombo = new Home_Combo_Customer_Adapter(mCombo);
+           
+            mAdapterCombo = new Home_Combo_Customer_Adapter(result);
             mRecyclerViewCombo.SetAdapter(mAdapterCombo);
 
             mAdapterCombo.ItemClick += (s, e) =>
             {
                 var intent = new Intent(Activity, typeof(Customer.activity_Service_Customer));
-                intent.PutExtra("ServiceId", mCombo[e].MaDV);
-                intent.PutExtra("ComboName", mCombo[e].NameService);
-                intent.PutExtra("PromotionName", mCombo[e].price.ToString());
+                intent.PutExtra("ServiceId", result[e].MaDV);
+                intent.PutExtra("ComboName", result[e].NameService);
+                intent.PutExtra("PromotionName", result[e].price.ToString());
                 intent.PutExtra("Index", e.ToString());
                 StartActivity(intent);
 
@@ -205,30 +162,17 @@ namespace Customer.Fragment
 
         public async void GetOutlet()
         {
-            // lay du lieu tu db
             myAPI = RestService.For<IMyAPI>("https://goldenspa.azurewebsites.net");
             var result = await myAPI.GetListChiNhanh();
-            mOutlet = new List<ListOutlet>(result.Count());
-
-
-            for (int i = 0; i < result.Count; i++)
-            {
-                var DataSample_Services_Outlet_ViewModel = new ListOutlet();
-                DataSample_Services_Outlet_ViewModel.MaCN = result[i].MaCN;
-                DataSample_Services_Outlet_ViewModel.Image = result[i].Image;
-                DataSample_Services_Outlet_ViewModel.name = result[i].name;
-                DataSample_Services_Outlet_ViewModel.address = result[i].address;
-                mOutlet.Add(DataSample_Services_Outlet_ViewModel);
-
-            }
-            mAdapterOutlet = new Home_Outlet_Customer_Adapter(mOutlet);
+            
+            mAdapterOutlet = new Home_Outlet_Customer_Adapter(result);
             mRecyclerViewOutlet.SetAdapter(mAdapterOutlet);
 
             mAdapterOutlet.ItemClick += (s, e) =>
             {
                 var intent = new Intent(Activity, typeof(Customer.activity_Outlet_Customer));
-                intent.PutExtra("OutletId", mOutlet[e].MaCN);
-                intent.PutExtra("OutletName", mOutlet[e].name);
+                intent.PutExtra("OutletId", result[e].MaCN);
+                intent.PutExtra("OutletName", result[e].name);
                 StartActivity(intent);
             };
         }
@@ -241,7 +185,7 @@ namespace Customer.Fragment
             var idCustomer = await myAPI.GetIdCustomer("0123456789");
             string cus = idCustomer.Substring(2, idCustomer.Length - 4);
             var resultService = await myAPI.GetListServiceUsed(cus);
-            var resultCombo = await myAPI.GetListComboUsed("KH1");
+            var resultCombo = await myAPI.GetListComboUsed(cus);
             var max = resultService.Count() + resultCombo.Count();
             mUsedService = new List<ListPromotion>(max);
 

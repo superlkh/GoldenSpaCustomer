@@ -26,7 +26,6 @@ namespace Customer.R_activity
             navBottom.NavigationItemSelected += (s, e) =>
             {
                 var trans = SupportFragmentManager.BeginTransaction();
-                //e.Item.IsChecked(Resource.Id.dichvuBtn);
                 switch (e.Item.ItemId)
                 {
                     case Resource.Id.navigation_home_customer:

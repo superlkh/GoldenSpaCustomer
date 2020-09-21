@@ -10,10 +10,6 @@ namespace Customer
     //[Activity(Label = "RecycleView", MainLauncher = true, Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
     class activity_Home_Customer:Activity
     {
-
-        
-
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);

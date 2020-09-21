@@ -37,9 +37,21 @@ namespace Customer
         {
             Customer_Appointment_RecentAppointment_ViewModel_ViewHolder vh = holder as Customer_Appointment_RecentAppointment_ViewModel_ViewHolder;
             Picasso.Get().Load(appointment_list[position].AnhChiNhanh).Into(vh.ServiceImg);
-            vh.TotalService.Text = appointment_list[position].TongDv.ToString();
+            vh.TotalService.Text = "Gồm " + appointment_list[position].TongDv.ToString() + " dịch vụ";
             vh.OutletName.Text = appointment_list[position].TenChiNhanh;
-            vh.Time.Text = appointment_list[position].NgayGioHen.ToString();
+            string ngayhen = appointment_list[position].NgayHen.ToString("dd/MM/yyyy");
+            string giohen = appointment_list[position].GioHen.ToString();
+            string[] a = giohen.Split(' ');
+            string[] b = ngayhen.Split(' ');
+            string henden = a[1] + " " + b[0];
+            vh.Time.Text = henden;
+
+            ((Customer_Appointment_RecentAppointment_ViewModel_ViewHolder)holder).ItemView.LongClick += delegate
+            {
+
+                appointment_list.Remove(appointment_list[position]);
+                NotifyItemRemoved(position);
+            };
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

@@ -2,7 +2,7 @@ package crc641f622b940e008ddb;
 
 
 public class activity_DetailService_Customer
-	extends android.app.Activity
+	extends android.support.v7.app.AppCompatActivity
 	implements
 		mono.android.IGCUserPeer
 {

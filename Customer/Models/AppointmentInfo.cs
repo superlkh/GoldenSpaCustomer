@@ -14,25 +14,19 @@ using Android.Widget;
 
 namespace Customer.Models
 {
-    public class AppointmentInfo
+    public partial class AppointmentInfo
     {
         [Required]
         [MinLength(2)]
         public string MaLichHen { get; set; }
         [Required]
         [MinLength(2)]
-        public string MaKh { get; set; }
-        [Required]
-        [MinLength(2)]
         public string TenChiNhanh { get; set; }
-        public string AnhChiNhanh { get; set; }
-        [Required]
-        [MinLength(2)]
-        public int TongDv { get; set; }
-        
-        [Required]
-        [MinLength(2)]
-        public DateTime NgayGioHen { get; set; }
+        public string? AnhChiNhanh { get; set; }
 
+        public int TongDv { get; set; }
+
+        public DateTime NgayHen { get; set; }
+        public DateTime? GioHen { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Customer
     
     [Activity(Label = "Service")]
 
-    class activity_Service_Customer : AppCompatActivity
+    public class activity_Service_Customer : AppCompatActivity
     {
         IMyAPI myAPI;
 
@@ -63,22 +63,25 @@ namespace Customer
                 serviceName.Text = Intent.GetStringExtra("ServiceName");
 
             servicePrice = FindViewById<TextView>(Resource.Id.txtServicePrice_Service_Customer);
-            servicePrice.Text = Intent.GetStringExtra("PromotionName");
+            if (Intent.GetStringExtra("PromotionName") == null)
+                servicePrice.Text = "";
+            else
+                servicePrice.Text = Intent.GetStringExtra("PromotionName");
 
             listOutlet = FindViewById<Spinner>(Resource.Id.spnOutlet_Service_Customer);
-            getListOutlet();
+            //getListOutlet();
 
             describe = FindViewById<TextView>(Resource.Id.txtContentDescripe_Service_Customer);
-            getDescribe();
+            //getDescribe();
 
             cv = (ChartView)FindViewById(Resource.Id.chartView1);
             rateStar = FindViewById<TextView>(Resource.Id.txtRateStar_Service_Customer);
-            DoAll();
+            //DoAll();
 
             mRecyclerViewCustomerComment = FindViewById<RecyclerView>(Resource.Id.recyclerViewCustomerComment_Service_Customer);
             mLayoutManagerCustomerComment = new LinearLayoutManager(this);
             mRecyclerViewCustomerComment.SetLayoutManager(mLayoutManagerCustomerComment);
-            getComment();
+            //getComment();
 
             
 
@@ -90,7 +93,7 @@ namespace Customer
 
             cv = (ChartView)FindViewById(Resource.Id.chartView1);
             rateStar = FindViewById<TextView>(Resource.Id.txtRateStar_Service_Customer);
-            DoAll();
+            //DoAll();
 
             cart = FindViewById<ImageView>(Resource.Id.imgcart_Service_Customer);
             cart.Click += Cart_Click1;
@@ -126,7 +129,7 @@ namespace Customer
             List<KeyValuePair<string, string>> outlets_pair = new List<KeyValuePair<string, string>>(result.Count);
             List<string> outlets = new List<string>(result.Count);
 
-            for (int i=0;i<result.Count;i++)
+            for (int i = 0; i < result.Count; i++)
             {
                 var item = new KeyValuePair<string, string>(result[i].MaChiNhanh, result[i].DiaChi);
                 outlets_pair.Add(item);

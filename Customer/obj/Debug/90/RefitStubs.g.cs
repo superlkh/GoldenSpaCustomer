@@ -46,6 +46,7 @@ namespace GoldenSpa.API
     using global::Customer.Models;
     using global::Refit;
     using global::Customer;
+    using global::Java.Util;
 
     /// <inheritdoc />
     [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage]
@@ -207,6 +208,62 @@ namespace GoldenSpa.API
             var arguments = new object[] { customerId };
             var func = requestBuilder.BuildRestResultFuncForMethod("GetAppointment", new Type[] { typeof(string) });
             return (Task<List<AppointmentInfo>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<AppointmentDetail>> IMyAPI.GetAppointmentDetail(string appointmentId)
+        {
+            var arguments = new object[] { appointmentId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetAppointmentDetail", new Type[] { typeof(string) });
+            return (Task<List<AppointmentDetail>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<CartInfo>> IMyAPI.GetCart(string customerId)
+        {
+            var arguments = new object[] { customerId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetCart", new Type[] { typeof(string) });
+            return (Task<List<CartInfo>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<Service_combo_Appoint>> IMyAPI.GetServiceOfAppointment(string appointmentId)
+        {
+            var arguments = new object[] { appointmentId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetServiceOfAppointment", new Type[] { typeof(string) });
+            return (Task<List<Service_combo_Appoint>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<Service_combo_Appoint>> IMyAPI.GetComboOfAppointment(string appointmentId)
+        {
+            var arguments = new object[] { appointmentId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetComboOfAppointment", new Type[] { typeof(string) });
+            return (Task<List<Service_combo_Appoint>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<string>> IMyAPI.GetListDoctor(string outletId, DateTime date, string time)
+        {
+            var arguments = new object[] { outletId, date, time };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetListDoctor", new Type[] { typeof(string), typeof(DateTime), typeof(string) });
+            return (Task<List<string>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<Therapist>> IMyAPI.GetTherapists(string therapistId)
+        {
+            var arguments = new object[] { therapistId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetTherapists", new Type[] { typeof(string) });
+            return (Task<List<Therapist>>)func(Client, arguments);
+        }
+
+        /// <inheritdoc />
+        Task<List<HistoryAppointment>> IMyAPI.GetHistoryAppointment(string customerId)
+        {
+            var arguments = new object[] { customerId };
+            var func = requestBuilder.BuildRestResultFuncForMethod("GetHistoryAppointment", new Type[] { typeof(string) });
+            return (Task<List<HistoryAppointment>>)func(Client, arguments);
         }
 
         /// <inheritdoc />

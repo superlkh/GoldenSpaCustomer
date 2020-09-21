@@ -18,5 +18,6 @@ namespace Customer.Models
         public string MaKh { get; set; }
         public string MaDv { get; set; }
         public string MaCombo { get; set; }
+        public string? MaKhuyenMai { get; set; }
     }
 }

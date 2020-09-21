@@ -14,7 +14,7 @@ namespace Customer
 
         RecyclerView.LayoutManager mLayoutManagerAppointment;
         RecyclerView mRecyclerViewAppointment;
-        Customer_ShoppingCardHistoryAppointment_RecentAppointment_ViewModel_List mAppointment_List;
+
         ShoppingCardHistoryAppointment_Appointment_Customer_Adapter mAdapterAppointment;
 
 
@@ -30,8 +30,7 @@ namespace Customer
             mRecyclerViewAppointment = FindViewById<RecyclerView>(Resource.Id.recyclerViewAppointment_ShoppingCardHistoryAppointment_Customer);
             mLayoutManagerAppointment = new LinearLayoutManager(this);
             mRecyclerViewAppointment.SetLayoutManager(mLayoutManagerAppointment);
-            mAppointment_List = new Customer_ShoppingCardHistoryAppointment_RecentAppointment_ViewModel_List();
-            mAdapterAppointment = new ShoppingCardHistoryAppointment_Appointment_Customer_Adapter(mAppointment_List);
+            
             mRecyclerViewAppointment.SetAdapter(mAdapterAppointment);
 
             

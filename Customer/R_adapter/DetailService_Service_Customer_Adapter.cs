@@ -11,33 +11,42 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 using Square.Picasso;
+using Customer.Models;
 
 namespace Customer
 {
     public class DetailService_Service_Customer_Adapter : RecyclerView.Adapter
     {
         public event EventHandler<int> ItemClick;
-        public Customer_DetailService_Service_ViewModel_List mService_List;
+        public List<Service_combo_Appoint> mServiceCombo_List;
 
-        public DetailService_Service_Customer_Adapter(Customer_DetailService_Service_ViewModel_List Service_List)
+        public DetailService_Service_Customer_Adapter(List<Service_combo_Appoint> Service_List)
         {
-            //this.context = context;
-            mService_List = Service_List;
+            mServiceCombo_List = Service_List;
         }
 
         public override int ItemCount
         {
-            get { return mService_List.Customer_DetailService_NumService_ViewModel; }
+            get { return mServiceCombo_List.Count; }
         }
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             Customer_DetailService_Service_ViewModel_ViewHolder vh = holder as Customer_DetailService_Service_ViewModel_ViewHolder;
-            Picasso.Get().Load(mService_List[position].mImageService).Into(vh.ServiceImg);
-            vh.ServiceName.Text = mService_List[position].mServiceName;
-            vh.Time.Text = mService_List[position].mTime;
-            vh.Room.Text = mService_List[position].mRoom.ToString();
-            vh.Bed.Text = mService_List[position].mBed.ToString();
+            Picasso.Get().Load(mServiceCombo_List[position].AnhDV).Into(vh.ServiceImg);
+            vh.ServiceName.Text = mServiceCombo_List[position].TenDV;
+            string ngayhen = mServiceCombo_List[position].NgayHen.ToString("dd/MM/yyyy");
+            string giohen = mServiceCombo_List[position].GioHen.ToString();
+            string[] a = giohen.Split(' ');
+            string[] b = ngayhen.Split(' ');
+            string henden = a[1] + " " + b[0];
+            vh.Time.Text = henden;
+            vh.Room.Text = mServiceCombo_List[position].Room.ToString();
+            vh.Bed.Text = mServiceCombo_List[position].Bed.ToString();
+            if (mServiceCombo_List[position].VIP == true)
+                vh.Vip.Checked = true;
+            else
+                vh.Vip.Checked = false ;
         }
 
         public override RecyclerView.ViewHolder OnCreateViewHolder(ViewGroup parent, int viewType)

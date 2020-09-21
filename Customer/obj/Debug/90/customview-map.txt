@@ -51,6 +51,7 @@ FrameLayout;obj\Debug\90\res\layout\menublank.xml
 FrameLayout;obj\Debug\90\res\layout\shoppingcardhistoryappointment_customer.xml
 FrameLayout;obj\Debug\90\res\layout\shoppingcardshoppingcart_customer.xml
 gradient;obj\Debug\90\res\drawable\colorgolden.xml
+ImageButton;obj\Debug\90\res\layout\item_shoppingcardshoppingcart_service_customer.xml
 ImageButton;obj\Debug\90\res\layout\updateaccount_customer.xml
 ImageView;obj\Debug\90\res\layout\account_customer.xml
 ImageView;obj\Debug\90\res\layout\bookappointment_customer.xml

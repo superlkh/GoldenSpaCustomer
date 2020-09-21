@@ -463,3 +463,6 @@ D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc643b917a3a20a5884b\Customer_Home_Combo_ViewModel_ViewHolder.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\activity_Outlet_Customer.java
 D:\VisualStudio\Customer\Customer\obj\Debug\90\Customer.csprojAssemblyReference.cache
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\Customer_ShoppingCardShoppingCart_Service_ViewModel_ViewHolder.java
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\getOutlet.java
+D:\VisualStudio\Customer\Customer\obj\Debug\90\android\src\crc641f622b940e008ddb\ShoppingCardShoppingCart_Service_Customer_Adapter.java
